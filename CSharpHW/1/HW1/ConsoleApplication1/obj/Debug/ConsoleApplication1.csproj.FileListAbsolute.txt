@@ -1,0 +1,7 @@
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\bin\Debug\NH1.exe.config
+E:\c#\tasks\ShkolaSoftheme\CSharpHW\1\HW1\ConsoleApplication1\bin\Debug\NW1.exe.config
