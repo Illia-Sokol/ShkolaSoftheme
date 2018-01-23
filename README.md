@@ -1,2 +1,2 @@
 # ShkolaSoftheme
-ShkolaSoftheme
+ShkolaSoftheme coursec
