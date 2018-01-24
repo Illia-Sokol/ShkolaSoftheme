@@ -10,8 +10,8 @@ namespace test
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Hello world");
+            var c = 10 + 15;
+            Console.WriteLine("Hello world {0}", c);
 
             Console.ReadKey();
         }
