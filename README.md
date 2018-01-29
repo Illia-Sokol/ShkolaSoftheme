@@ -1,2 +1,2 @@
 # ShkolaSoftheme
-ShkolaSoftheme courses
+ShkolaSoftheme courses practice
