@@ -1,0 +1,28 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBlock TextWrapping="Wrap" Text="Left Operand" Margin="26,17,396,286"/>
+        <TextBlock TextWrapping="Wrap" Text="Right Operand" Margin="363,19,59,284"/>
+        <StackPanel HorizontalAlignment="Left" Height="134" Margin="203,18,0,0" VerticalAlignment="Top" Width="100">
+           <RadioButton x:Name="multiplication" Content="* Multiplication" Margin="8,4,0,0" Width="86" Height="18"/>
+           <RadioButton x:Name="division" Content="/ Division" Margin="8,4,0,0" Width="86" Height="18"/>
+           <RadioButton x:Name="addition" Content="+ Addition" Margin="8,4,0,0" Width="86" Height="18"/>
+           <RadioButton x:Name="subtraction" Content="- Substriction" Margin="8,4,0,0" Width="86" Height="18"/>
+           <RadioButton x:Name="pow" Content="^ Pow" Margin="8,4,0,0" Width="86" Height="18"/>
+           <RadioButton x:Name="reminder" Content="% Reminder" Margin="8,4,0,0" Width="86" Height="18"/>
+        </StackPanel>
+        <TextBox x:Name="lfOperand" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="23,60,0,0"/>
+        <TextBox x:Name="rghOperand" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="347,61,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Exprecion" VerticalAlignment="Top" Margin="32,169,0,0" Width="95"/>
+        <TextBlock x:Name="result" HorizontalAlignment="Left" TextWrapping="Wrap" Text="k" VerticalAlignment="Top" Margin="150,205,0,0" Width="95"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Margin="32,203,0,0" Width="95"/>
+        <TextBlock x:Name="expresion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="k" VerticalAlignment="Top" Margin="148,168,0,0" Width="95"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="32,266,0,0" Click="calculateClick"/>
+    </Grid>
+</Window>
