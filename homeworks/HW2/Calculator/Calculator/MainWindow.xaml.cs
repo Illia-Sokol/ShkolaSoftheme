@@ -39,13 +39,17 @@ namespace Calculator
             {
                 Addition();
             }
-            else if (addition.IsChecked.HasValue && addition.IsChecked.Value)
+            else if (subtraction.IsChecked.HasValue && subtraction.IsChecked.Value)
             {
-                Addition();
+                Subtraction();
             }
-            else if (addition.IsChecked.HasValue && addition.IsChecked.Value)
+            else if (pow.IsChecked.HasValue && pow.IsChecked.Value)
             {
-                Addition();
+                Pow();
+            }
+            else if (remind.IsChecked.HasValue && remind.IsChecked.Value)
+            {
+                Remind();
             }
         }
 
@@ -67,7 +71,7 @@ namespace Calculator
             double rightOperand = double.Parse(rghOperand.Text);
             double outcome = 0;
 
-            outcome = leftOperand / rightOperand;
+            outcome =  Math.Floor( leftOperand / rightOperand * 100 ) / 100;
             expresion.Text = leftOperand + " / " + rightOperand;
 
             result.Text = outcome.ToString();
