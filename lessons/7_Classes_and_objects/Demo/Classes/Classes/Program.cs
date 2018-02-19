@@ -4,7 +4,7 @@ namespace Classes
 {
     class Program
     {
-        zz void DoWork()
+        static void DoWork()
         {
             var origin = new Point();
             var bottomRight = new Point(1366, 768);
