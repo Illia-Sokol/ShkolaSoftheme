@@ -6,42 +6,50 @@ namespace Managin_errors
     {
         static void Main(string[] args)
         {
-            var number = getRandomNumber();
-
-            for (var i = 0; i < 3;)
+            try
             {
-                try
-                {
-                    bool isRightNumber = EnterNumber(number);
-                    if(isRightNumber)
-                    {
-                        number = getRandomNumber();
-                        i = 0;
-                    }
-                }
-                catch (Exception e)
-                {
-                    i++;
-                    Console.WriteLine(e);
-                }
+                EnterNumber();
+            }
+            catch (MyException e)
+            {
+                Console.WriteLine(e);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Bad format for number");
             }
         }
 
-        static bool EnterNumber(int randomNumber)
+        static void EnterNumber()
         {
-            Console.WriteLine("Plese enter number in the range from 0 to 10");
-            var userNumber = Int32.Parse(Console.ReadLine());
+            var number = getRandomNumber();
+            var i = 0;
 
-            if (userNumber == randomNumber)
+            while(true)
             {
-                Console.WriteLine("Success!!! You are win!!!");
-                return true;
+                Console.WriteLine("Plese enter number in the range from 0 to 10");
+                var userNumber = Int32.Parse(Console.ReadLine());
+
+                if (userNumber < 0 || userNumber > 10)
+                {
+                    throw new MyException("ATTENTION!!! Your number must be in the range from 0 to 10");
+                }
+                if (userNumber == number)
+                {
+                    Console.WriteLine("Success!!! You are win!!!");
+                    number = getRandomNumber();
+                    i = 0;
+                }
+                else
+                {
+                    Console.WriteLine("Your number is wrong, please enter new number");
+                    i++;
+                    if(i > 2)
+                    {
+                        break;
+                    }
+                }
             }
-            else if (userNumber < 0 || userNumber > 10)
-            {
-                throw new InvalidProgramException("ATTENTION!!! Your number must be in the range from 0 to 10");
-            }
-            throw new InvalidOperationException("Your number is wrong, please enter new number");
         }
 
         static int getRandomNumber()
