@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managin_errors", "Managin_errors\Managin_errors.csproj", "{D9802A34-9093-4BC2-897F-D81527E62D28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9802A34-9093-4BC2-897F-D81527E62D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9802A34-9093-4BC2-897F-D81527E62D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9802A34-9093-4BC2-897F-D81527E62D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9802A34-9093-4BC2-897F-D81527E62D28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF9CB55A-4544-4E93-99E5-2DED8E84AF58}
+	EndGlobalSection
+EndGlobal
