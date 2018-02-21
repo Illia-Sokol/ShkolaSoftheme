@@ -6,15 +6,25 @@ namespace Interfaces_vehicle
     {
         static void Main()
         {
-            IVehicle myVehicle = new Car(wheels: 4,
+            IVehicle myCar = new Car(wheels: 4,
                                          topSpeed: 200,
                                          passengerCapacity: 5);
 
-            var info = myVehicle.GetInfo();
+            IVehicle myBike = new Bike();
 
-            Console.WriteLine(info);
+            IVehicle[] arr = { myCar, myBike };
+
+            foreach(var vehicle in arr)
+            {
+                Display(vehicle);
+            }
 
             Console.ReadKey();
+        }
+
+        static void Display(IVehicle vehicle)
+        {
+            Console.WriteLine(vehicle.GetInfo());
         }
     }
 }
