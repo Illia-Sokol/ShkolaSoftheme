@@ -7,9 +7,10 @@ namespace class_1
         static void Main(string[] args)
         {
             var car = new Car("Opel", 1989, "green");
-            Console.WriteLine("{0}", car._model);
-            var tuningCar = new TuningCar().TuningCarColor("Audi", 1999);
-            Console.WriteLine("{0}", tuningCar._model);
+            Console.WriteLine("{0}", car.Color);
+
+            new TuningCar().TuningCarColor(car, "pink");
+            Console.WriteLine("{0}", car.Color);
         }
     }
 }
