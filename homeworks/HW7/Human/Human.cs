@@ -6,32 +6,32 @@ namespace Human
 {
     class Human
     {
-        public int _birthDate;
-        public string _firstName;
-        public string _lastName;
-        private readonly int _age;
+        public int BirthDate { get; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        private readonly int Age;
 
         public Human(int birthDate, string firstName, string lastName)
         {
-            _birthDate = birthDate;
-            _firstName = firstName;
-            _lastName = lastName;
-            _age = 23;
+            BirthDate = birthDate;
+            FirstName = firstName;
+            LastName = lastName;
+            Age = 23;
         }
 
         public Human(int birthDate, string firstName, string lastName, int age)
         {
-            _birthDate = birthDate;
-            _firstName = firstName;
-            _lastName = lastName;
-            _age = age;
+            BirthDate = birthDate;
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
         }
 
         public bool Equals(Human human)
         {
-            if (_birthDate == human._birthDate
-                && _firstName == human._firstName
-                && _lastName == human._lastName)
+            if (BirthDate == human.BirthDate
+                && FirstName == human.FirstName
+                && LastName == human.LastName)
             {
                 return true;
             }
