@@ -6,26 +6,26 @@ namespace ShapeDescriptor
 {
     class ShapeDescriptor
     {
-        public int A { get; set; }
-        public int B { get; set; }
-        public int C { get; set; }
-        public int D { get; set; }
-        public int E { get; set; }
+        public Point A { get; }
+        public Point B { get; }
+        public Point C { get; }
+        public Point D { get; }
+        public Point E { get; }
 
-        public ShapeDescriptor(int a)
+        public ShapeDescriptor(Point a)
         {
             A = a;
             ShapeType(A);
         }
 
-        public ShapeDescriptor(int a, int b)
+        public ShapeDescriptor(Point a, Point b)
         {
             A = a;
             B = b;
             ShapeType(A, B);
         }
 
-        public ShapeDescriptor(int a, int b, int c) : this(a, 0)
+        public ShapeDescriptor(Point a, Point b, Point c) : this(a, b)
         {
             A = a;
             B = b;
@@ -33,7 +33,7 @@ namespace ShapeDescriptor
             ShapeType(A, B, C);
         }
 
-        public ShapeDescriptor(int a, int b, int c, int e) : this(1, b, c)
+        public ShapeDescriptor(Point a, Point b, Point c, Point e) : this(null, b, c)
         {
             A = a;
             B = b;
@@ -42,22 +42,22 @@ namespace ShapeDescriptor
             ShapeType(A, B, C, D);
         }
 
-        public void ShapeType(int a)
+        public void ShapeType(Point a)
         {
             Console.WriteLine("The figure is the square");
         }
 
-        public void ShapeType(int a, int b)
+        public void ShapeType(Point a, Point b)
         {
             Console.WriteLine("The figure is the rectangle");
         }
 
-        public void ShapeType(int a, int b, int c)
+        public void ShapeType(Point a, Point b, Point c)
         {
             Console.WriteLine("The figure is the triangle");
         }
 
-        public void ShapeType(int a, int b, int c, int e)
+        public void ShapeType(Point a, Point b, Point c, Point e)
         {
             Console.WriteLine("The figure is the romb");
         }
