@@ -15,7 +15,7 @@ namespace Car
             Console.WriteLine("Create Car");
         }
 
-        public void Reconstruct(Engine engine)
+        public void ChangeEngine(Engine engine)
         {
             Engine = engine;
         }
