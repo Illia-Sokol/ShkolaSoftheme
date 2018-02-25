@@ -39,13 +39,10 @@ namespace figure
 
         static void drawTriangle(int lines)
         {
+            var line = "";
             for(int i = 0; i < lines; i++)
             {
-                for(int j = 0; j <= i; j++)
-                {
-                    Console.Write("* ");
-                }
-                Console.WriteLine();
+                Console.WriteLine(line += "* ");
             }
         }
         static void drawSquare(int lines)
