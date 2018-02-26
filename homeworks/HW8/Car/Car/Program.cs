@@ -6,7 +6,10 @@ namespace Car
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var tt = new CarConstructor();
+            Car car = tt.Construct(new Engine(), new Color("red"), new Transmission());
+            Console.Write("{0}", car.Color.CarColor);
+            Console.ReadKey();
         }
     }
 }
