@@ -17,7 +17,7 @@ namespace array_methods
 
             Console.WriteLine(arr.GetByIndex(2));
 
-            arr.Add(5);
+            arr.Add(10);
             arr.PrintArrya();
 
             Console.WriteLine();

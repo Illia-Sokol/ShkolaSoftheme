@@ -7,34 +7,22 @@ namespace array_methods
     class ArrayMethods
     {
         private int[] _array;
+        private int[] newArray;
 
         public ArrayMethods(int[] array)
         {
             _array = array;
         }
 
-        public void Add(params int[] list)
+        public void Add(int value)
         {
-            //_array = new int[] { value};
-            //_array = new int[]
-            var arrayLength = _array.Length + list.Length;
-            var array = new int[arrayLength];
-            var listIterator = 0;
-            for (var i = 0; i < _array.Length + list.Length; i++)
+           newArray = new int[_array.Length + 1];
+
+            for (var i = 0; i < _array.Length; i++)
             {
-                if(i < arrayLength)
-                {
-                    array[i] = _array[i];
-                }
-                else
-                {
-                    array[i] = list[listIterator];
-                    listIterator++;
-                }
+                newArray[i] = _array[i];
             }
-            _array = new int [5];
-            _array[0] = 3;
-            _array[4] = 6;
+            newArray[_array.Length] = value;
         }
 
         public bool Contains(int value)
@@ -56,7 +44,11 @@ namespace array_methods
 
         public void PrintArrya()
         {
-            foreach (int val in _array)
+            if( newArray == null || newArray.Length == 0)
+            {
+                return;
+            }
+            foreach (int val in newArray)
             {
                 Console.Write("{0} ", val);
             }
