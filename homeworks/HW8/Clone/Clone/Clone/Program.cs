@@ -24,15 +24,18 @@ namespace Clone
             Console.WriteLine("_________________User Copy__________________________");
 
             User userCopy = new User("David", "Beckham", 40);
-            Console.WriteLine("{0}, {1}, {2}", userCopy.Name, userCopy.Surname, userCopy.Age);
-
             User userCopy2 = userCopy.Copy(userCopy);
-            Console.WriteLine("{0}, {1}, {2}", userCopy2.Name, userCopy2.Surname, userCopy2.Age);
+            PrintUser(userCopy);
+            PrintUser(userCopy2);
 
             userCopy.ChangeName("Jack");
-            Console.WriteLine("{0}, {1}, {2}", userCopy.Name, userCopy.Surname, userCopy.Age);
-            Console.WriteLine("{0}, {1}, {2}", userCopy2.Name, userCopy2.Surname, userCopy2.Age);
+            PrintUser(userCopy);
+            PrintUser(userCopy2);
+        }
 
+        static void PrintUser(User user)
+        {
+            Console.WriteLine("{0}, {1}, {2}", user.Name, user.Surname, user.Age);
         }
     }
 }
