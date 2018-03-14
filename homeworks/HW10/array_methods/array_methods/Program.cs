@@ -8,7 +8,7 @@ namespace array_methods
         {
             var arr = new ArrayMethods(new int[] { 1, 2, 3, 4 });
 
-            arr.PrintArrya();
+            arr.PrintArray();
 
             Console.WriteLine(arr.Contains(5));
             Console.WriteLine(arr.Contains(3));
@@ -16,7 +16,7 @@ namespace array_methods
             Console.WriteLine(arr.GetByIndex(2));
 
             arr.Add(10);
-            arr.PrintArrya();
+            arr.PrintArray();
 
             Console.WriteLine();
         }

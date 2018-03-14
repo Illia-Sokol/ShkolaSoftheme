@@ -42,10 +42,11 @@ namespace array_methods
             return _array[value];
         }
 
-        public void PrintArrya()
+        public void PrintArray()
         {
             if( newArray == null || newArray.Length == 0)
             {
+                Console.WriteLine("newArray doesn't exisist");
                 return;
             }
             foreach (int val in newArray)
