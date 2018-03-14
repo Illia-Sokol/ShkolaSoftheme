@@ -6,8 +6,6 @@ namespace array_methods
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             var arr = new ArrayMethods(new int[] { 1, 2, 3, 4 });
 
             arr.PrintArrya();
