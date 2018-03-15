@@ -6,22 +6,25 @@ namespace find_unique_element
     {
         static void Main(string[] args)
         {
-            int[] array = new int[] { 15, 25, 35, 45, 55,
-                 12, 22, 32, 43, 52,
-                 12, 22, 32, 43, 52, 26,
-                 15, 25, 35, 45, 55
+            int[] arr = new int[] {
+                15, 25, 35, 45, 55,
+                12, 22, 32, 43, 52,
+                12, 22, 32, 43, 52, 26,
+                15, 25, 35, 45, 55
             };
 
-            int unique = array[0];
+            var val = notDuplicate(arr);
+            Console.WriteLine("Value is {0}", val);
+        }
 
-            for (var i = 0; i < array.length; i++ )
+        static int notDuplicate(int[] arr)
+        {
+            int unpaired = arr[0];
+            for (var i = 1; i < arr.Length; i++)
             {
-                unique = array[i];
-                if (unique == array[i])
-                {
-                    continue;
-                }
+                unpaired ^= arr[i];
             }
+            return unpaired;
         }
     }
 }
