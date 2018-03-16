@@ -13,6 +13,22 @@ namespace Mobile
     {
         private readonly int _number;
 
-        public event EventHandler<CallInfo> SendCall ;
+        public delegate void CallHandler(object sender, EventHandler e);
+        public event EventHandler<CallInfo> SendCall;
+
+        public MobileAccount(int number)
+        {
+            _number = number;
         }
+
+        public void Call(int sum)
+        {
+            Console.WriteLine("call");
+        }
+
+        public void SendSms()
+        {
+            Console.WriteLine("sendSmS");
+        }
+    }
 }
