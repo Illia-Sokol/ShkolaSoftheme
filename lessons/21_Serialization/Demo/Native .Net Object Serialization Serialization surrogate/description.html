@@ -1,0 +1,807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Native .Net Object Serialization</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Native .Net Object Serialization</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Diagnostics, Windows Forms
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, File System, User Interface, Windows Forms, Windows Form Controls, Control, Files
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/3/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Native-Net-Object-3ef8851f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><span style="font-size:small">There are many situations that developer wants to serialize native .net object like button, picturebox and so on. As you know native objects in .net are not serializable so developer should use some other interfaces and classes
+ to accomplish this task. why we need to serialize native object ?, some applications need to have dynamic number of same object with same behaviour, for example POS system for Pool Club, maybe in future club owner want to add another pool table, so he needs
+ to order developer to recreate and rebuild the software ? like below figure;</span></p>
+<p><span style="font-size:small"><img src="description/tables.PNG" alt="" width="585" height="510"></span></p>
+<p><span style="font-size:small">Above figure shows you some pool and snooker table object that inherited by Button class.</span></p>
+<p><span style="font-size:small">to serialize and save the layout we need to have develop custom serializer.</span></p>
+<h1><span>Building the Sample</span></h1>
+<p><span style="font-size:small">To develop custom serializer, first create a class library project. then create another class called &quot;BinarySerializer&quot;. and copy the below code into the class.</span></p>
+<p><span style="line-height:15px; white-space:pre"><em>&nbsp;</em></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using System;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.aspx"  title="Auto generated link to System.IO">System.IO</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.aspx"  title="Auto generated link to System.Runtime.Serialization">System.Runtime.Serialization</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters">System.Runtime.Serialization.Formatters</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.Binary.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters.Binary">System.Runtime.Serialization.Formatters.Binary</a>;
+
+namespace YourProject
+{
+    public class BinarySerializer
+    {
+        /// &lt;summary&gt;
+        /// It Deserialize the binary file to object
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Binary File Path&lt;/param&gt;
+        /// &lt;returns&gt;Returns Object that Must Cast to Specific Type&lt;/returns&gt;
+        public static object FromBin(string filename)
+        {
+            object result = null;
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                MemoryStream stream = new MemoryStream(File.ReadAllBytes(filename));
+                result = formatter.Deserialize(stream);
+                GC.SuppressFinalize(formatter);
+            }
+            catch (Exception ex)
+            {
+                Diagnastics.EventLogger.Logger(ex, &quot;BinarySerializer - FromBin(filename);&quot;);
+            }
+            return result;
+        }
+
+        /// &lt;summary&gt;
+        /// It Serialize the object to binary file
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Binary File Path&lt;/param&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Current Object that Must Serialize&lt;/param&gt;
+        public static void ToBin(string filename, object obj)
+        {
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                MemoryStream stream = new MemoryStream();
+                formatter.Serialize(stream, obj);
+                FileStream file = new FileStream(filename, FileMode.Create, FileAccess.Write);
+                BinaryWriter writer = new BinaryWriter(file);
+                writer.Write(stream.ToArray(), 0, stream.ToArray().Length);
+                writer.Flush();
+                writer.Close();
+                file.Close();
+                GC.SuppressFinalize(formatter);
+            }
+            catch (Exception ex)
+            {
+                Diagnastics.EventLogger.Logger(ex, &quot;BinarySerializer - ToBin(filename,obj);&quot;);
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// It serialize the object to binary 
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Current Object that Must Serialize&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public static byte[] ToBin(object obj)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            MemoryStream stream = new MemoryStream();
+            formatter.Serialize(stream, obj);
+            GC.SuppressFinalize(formatter);
+            return stream.ToArray();
+        }
+
+        /// &lt;summary&gt;
+        /// It Deserialize the binary file to object
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Binary File Path&lt;/param&gt;
+        /// &lt;returns&gt;Returns Object that Must Cast to Specific Type&lt;/returns&gt;
+        public static object FromBin(byte[] data)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            MemoryStream stream = new MemoryStream(data);
+            object result = formatter.Deserialize(stream);
+            GC.SuppressFinalize(formatter);
+            return result;
+        }
+
+
+        /// &lt;summary&gt;
+        /// It Serialize the object to binary file by custom surrogate
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Binary File Path&lt;/param&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Current Object that Must Serialize&lt;/param&gt;
+        /// &lt;param name=&quot;surrogate&quot;&gt;Custom Surrogate&lt;/param&gt;
+        public static void ToBin(string filename, object obj, ISerializationSurrogate surrogate, Type objectType)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            
+            SurrogateSelector surrogateSelector = new SurrogateSelector();
+            surrogateSelector.AddSurrogate(objectType, new StreamingContext(StreamingContextStates.All), surrogate);
+            
+            formatter.SurrogateSelector = surrogateSelector;
+
+            MemoryStream stream = new MemoryStream();
+
+            formatter.Serialize(stream, obj);
+            
+            FileStream file = new FileStream(filename, FileMode.Create, FileAccess.Write);
+            BinaryWriter writer = new BinaryWriter(file);
+            writer.Write(stream.ToArray(), 0, stream.ToArray().Length);
+            writer.Flush();
+            writer.Close();
+            file.Close();
+
+            GC.SuppressFinalize(formatter);
+
+        }
+
+        /// &lt;summary&gt;
+        /// It Deserialize the binary file to object
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Binary File Path&lt;/param&gt;
+        /// &lt;param name=&quot;surrogate&quot;&gt;Custom Surrogate&lt;/param&gt;
+        /// &lt;param name=&quot;objectType&quot;&gt;Return Object Type &lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public static object FromBin(string filename, ISerializationSurrogate surrogate, Type objectType)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            
+            SurrogateSelector surrogateSelector = new SurrogateSelector();
+            surrogateSelector.AddSurrogate(objectType, new StreamingContext(StreamingContextStates.All), surrogate);
+
+            formatter.SurrogateSelector = surrogateSelector;
+
+            MemoryStream stream = new MemoryStream(File.ReadAllBytes(filename));
+
+            object result = formatter.Deserialize(stream);
+
+            stream.Close();
+            stream.Dispose();
+ 
+            GC.Collect();
+            GC.SuppressFinalize(formatter);
+
+            return result;
+
+        }
+
+
+        /// &lt;summary&gt;
+        /// It Serialize the object to binary file by custom surrogate
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Current Object that Must Serialize&lt;/param&gt;
+        /// &lt;param name=&quot;surrogate&quot;&gt;Custom Surrogate&lt;/param&gt;
+        public static byte[] ToBin(object obj, ISerializationSurrogate surrogate, Type objectType)
+        {
+            IFormatter formatter = new BinaryFormatter();
+
+            SurrogateSelector surrogateSelector = new SurrogateSelector();
+            surrogateSelector.AddSurrogate(objectType, new StreamingContext(StreamingContextStates.All), surrogate);
+
+            formatter.SurrogateSelector = surrogateSelector;
+
+            MemoryStream stream = new MemoryStream();
+
+            formatter.Serialize(stream, obj);
+
+            GC.SuppressFinalize(formatter);
+
+            return stream.ToArray();
+
+        }
+
+
+        /// &lt;summary&gt;
+        /// It Deserialize the binary file to object
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Binary Array Object&lt;/param&gt;
+        /// &lt;param name=&quot;surrogate&quot;&gt;Custom Surrogate&lt;/param&gt;
+        /// &lt;param name=&quot;objectType&quot;&gt;Return Object Type &lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public static object FromBin(byte[] obj, ISerializationSurrogate surrogate, Type objectType)
+        {
+            IFormatter formatter = new BinaryFormatter();
+
+            SurrogateSelector surrogateSelector = new SurrogateSelector();
+            surrogateSelector.AddSurrogate(objectType, new StreamingContext(StreamingContextStates.All), surrogate);
+
+            formatter.SurrogateSelector = surrogateSelector;
+
+            MemoryStream stream = new MemoryStream(obj);
+
+            object result = formatter.Deserialize(stream);
+
+            stream.Close();
+            stream.Dispose();
+
+            GC.Collect();
+            GC.SuppressFinalize(formatter);
+
+            return result;
+
+        }
+
+    }
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">using</span>&nbsp;System;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.aspx"  title="Auto generated link to System.IO">System.IO</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.aspx"  title="Auto generated link to System.Runtime.Serialization">System.Runtime.Serialization</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters">System.Runtime.Serialization.Formatters</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.Binary.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters.Binary">System.Runtime.Serialization.Formatters.Binary</a>;&nbsp;
+&nbsp;
+<span class="cs__keyword">namespace</span>&nbsp;YourProject&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;BinarySerializer&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Deserialize&nbsp;the&nbsp;binary&nbsp;file&nbsp;to&nbsp;object</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;filename&quot;&gt;Binary&nbsp;File&nbsp;Path&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;Returns&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Cast&nbsp;to&nbsp;Specific&nbsp;Type&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">object</span>&nbsp;FromBin(<span class="cs__keyword">string</span>&nbsp;filename)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">object</span>&nbsp;result&nbsp;=&nbsp;<span class="cs__keyword">null</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinaryFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream(File.ReadAllBytes(filename));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;formatter.Deserialize(stream);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception&nbsp;ex)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diagnastics.EventLogger.Logger(ex,&nbsp;<span class="cs__string">&quot;BinarySerializer&nbsp;-&nbsp;FromBin(filename);&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;result;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Serialize&nbsp;the&nbsp;object&nbsp;to&nbsp;binary&nbsp;file</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;filename&quot;&gt;Binary&nbsp;File&nbsp;Path&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Current&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Serialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;ToBin(<span class="cs__keyword">string</span>&nbsp;filename,&nbsp;<span class="cs__keyword">object</span>&nbsp;obj)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinaryFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.Serialize(stream,&nbsp;obj);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileStream&nbsp;file&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;FileStream(filename,&nbsp;FileMode.Create,&nbsp;FileAccess.Write);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinaryWriter&nbsp;writer&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryWriter(file);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Write(stream.ToArray(),&nbsp;<span class="cs__number">0</span>,&nbsp;stream.ToArray().Length);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Flush();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Close();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.Close();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception&nbsp;ex)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diagnastics.EventLogger.Logger(ex,&nbsp;<span class="cs__string">&quot;BinarySerializer&nbsp;-&nbsp;ToBin(filename,obj);&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;serialize&nbsp;the&nbsp;object&nbsp;to&nbsp;binary&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Current&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Serialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;ToBin(<span class="cs__keyword">object</span>&nbsp;obj)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinaryFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.Serialize(stream,&nbsp;obj);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;stream.ToArray();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Deserialize&nbsp;the&nbsp;binary&nbsp;file&nbsp;to&nbsp;object</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;filename&quot;&gt;Binary&nbsp;File&nbsp;Path&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;Returns&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Cast&nbsp;to&nbsp;Specific&nbsp;Type&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">object</span>&nbsp;FromBin(<span class="cs__keyword">byte</span>[]&nbsp;data)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinaryFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream(data);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">object</span>&nbsp;result&nbsp;=&nbsp;formatter.Deserialize(stream);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;result;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Serialize&nbsp;the&nbsp;object&nbsp;to&nbsp;binary&nbsp;file&nbsp;by&nbsp;custom&nbsp;surrogate</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;filename&quot;&gt;Binary&nbsp;File&nbsp;Path&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Current&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Serialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;surrogate&quot;&gt;Custom&nbsp;Surrogate&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;ToBin(<span class="cs__keyword">string</span>&nbsp;filename,&nbsp;<span class="cs__keyword">object</span>&nbsp;obj,&nbsp;ISerializationSurrogate&nbsp;surrogate,&nbsp;Type&nbsp;objectType)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SurrogateSelector&nbsp;surrogateSelector&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SurrogateSelector();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;surrogateSelector.AddSurrogate(objectType,&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamingContext(StreamingContextStates.All),&nbsp;surrogate);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.SurrogateSelector&nbsp;=&nbsp;surrogateSelector;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.Serialize(stream,&nbsp;obj);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileStream&nbsp;file&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;FileStream(filename,&nbsp;FileMode.Create,&nbsp;FileAccess.Write);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinaryWriter&nbsp;writer&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryWriter(file);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Write(stream.ToArray(),&nbsp;<span class="cs__number">0</span>,&nbsp;stream.ToArray().Length);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Flush();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Close();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.Close();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Deserialize&nbsp;the&nbsp;binary&nbsp;file&nbsp;to&nbsp;object</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;filename&quot;&gt;Binary&nbsp;File&nbsp;Path&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;surrogate&quot;&gt;Custom&nbsp;Surrogate&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;objectType&quot;&gt;Return&nbsp;Object&nbsp;Type&nbsp;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">object</span>&nbsp;FromBin(<span class="cs__keyword">string</span>&nbsp;filename,&nbsp;ISerializationSurrogate&nbsp;surrogate,&nbsp;Type&nbsp;objectType)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SurrogateSelector&nbsp;surrogateSelector&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SurrogateSelector();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;surrogateSelector.AddSurrogate(objectType,&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamingContext(StreamingContextStates.All),&nbsp;surrogate);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.SurrogateSelector&nbsp;=&nbsp;surrogateSelector;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream(File.ReadAllBytes(filename));&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">object</span>&nbsp;result&nbsp;=&nbsp;formatter.Deserialize(stream);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stream.Close();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stream.Dispose();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.Collect();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;result;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Serialize&nbsp;the&nbsp;object&nbsp;to&nbsp;binary&nbsp;file&nbsp;by&nbsp;custom&nbsp;surrogate</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Current&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Serialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;surrogate&quot;&gt;Custom&nbsp;Surrogate&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;ToBin(<span class="cs__keyword">object</span>&nbsp;obj,&nbsp;ISerializationSurrogate&nbsp;surrogate,&nbsp;Type&nbsp;objectType)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SurrogateSelector&nbsp;surrogateSelector&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SurrogateSelector();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;surrogateSelector.AddSurrogate(objectType,&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamingContext(StreamingContextStates.All),&nbsp;surrogate);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.SurrogateSelector&nbsp;=&nbsp;surrogateSelector;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.Serialize(stream,&nbsp;obj);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;stream.ToArray();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;Deserialize&nbsp;the&nbsp;binary&nbsp;file&nbsp;to&nbsp;object</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Binary&nbsp;Array&nbsp;Object&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;surrogate&quot;&gt;Custom&nbsp;Surrogate&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;objectType&quot;&gt;Return&nbsp;Object&nbsp;Type&nbsp;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">object</span>&nbsp;FromBin(<span class="cs__keyword">byte</span>[]&nbsp;obj,&nbsp;ISerializationSurrogate&nbsp;surrogate,&nbsp;Type&nbsp;objectType)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IFormatter&nbsp;formatter&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BinaryFormatter();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SurrogateSelector&nbsp;surrogateSelector&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SurrogateSelector();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;surrogateSelector.AddSurrogate(objectType,&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamingContext(StreamingContextStates.All),&nbsp;surrogate);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter.SurrogateSelector&nbsp;=&nbsp;surrogateSelector;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MemoryStream&nbsp;stream&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream(obj);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">object</span>&nbsp;result&nbsp;=&nbsp;formatter.Deserialize(stream);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stream.Close();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stream.Dispose();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.Collect();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC.SuppressFinalize(formatter);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;result;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p><em>&nbsp;</em></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small">As you see, there are many ToBin, FromBin for different situations.</span></p>
+<p><span style="font-size:small">For serialize native .net object, you need to use ISerializationSurrogate interface, for serialize native object you need also create another class that inherits from ISerializationSurrogate interface, and after that pass the
+ object to the FromBin or ToBin method in BinarySerializer class. please pay attention to below code snippet.</span></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using System;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.aspx"  title="Auto generated link to System.Runtime.Serialization">System.Runtime.Serialization</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters">System.Runtime.Serialization.Formatters</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.Binary.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters.Binary">System.Runtime.Serialization.Formatters.Binary</a>;
+
+namespace YourProject
+{
+    public class MovableButtonSurrogate : ISerializationSurrogate
+    {
+        /// &lt;summary&gt;
+        /// It occures when the object is going to serialize
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Current Object that Must Serialize&lt;/param&gt;
+        /// &lt;param name=&quot;info&quot;&gt;Serialization Info that Contains Which Property/Variable must Serialize&lt;/param&gt;
+        /// &lt;param name=&quot;context&quot;&gt;Streaming Context&lt;/param&gt;
+        public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
+        {
+            MovableButton table = (MovableButton)obj;
+
+            info.AddValue(&quot;Location&quot;, table.Location);
+            info.AddValue(&quot;Size&quot;, table.Size);
+            info.AddValue(&quot;Name&quot;, table.Name);
+ 
+         
+            info.AddValue(&quot;BackgroundImage&quot;, table.BackgroundImage);
+            info.AddValue(&quot;BackgroundImageLayout&quot;, table.BackgroundImageLayout);
+           
+            info.AddValue(&quot;ForeColor&quot;, table.ForeColor);
+        
+        }
+
+
+        /// &lt;summary&gt;
+        /// It occures when the object is going to deserialize
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;obj&quot;&gt;Current Object that Must Deserialize&lt;/param&gt;
+        /// &lt;param name=&quot;info&quot;&gt;Serialization Info that Contains Which Property/Variable must Deserialize&lt;/param&gt;
+        /// &lt;param name=&quot;context&quot;&gt;Streaming Context&lt;/param&gt;
+        /// &lt;param name=&quot;selector&quot;&gt;Custom ISurrogateSelector &lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
+        {
+            MovableButton table = new MovableButton();
+
+            try
+            {
+                table.Location = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Point.aspx"  title="Auto generated link to System.Drawing.Point">System.Drawing.Point</a>)info.GetValue(&quot;Location&quot;, typeof(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Point.aspx"  title="Auto generated link to System.Drawing.Point">System.Drawing.Point</a>));
+                table.Name = info.GetString(&quot;Name&quot;);
+                table.BackgroundImage = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Image.aspx"  title="Auto generated link to System.Drawing.Image">System.Drawing.Image</a>)info.GetValue(&quot;BackgroundImage&quot;, typeof(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Image.aspx"  title="Auto generated link to System.Drawing.Image">System.Drawing.Image</a>));
+                table.BackgroundImageLayout = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.ImageLayout.aspx"  title="Auto generated link to System.Windows.Forms.ImageLayout">System.Windows.Forms.ImageLayout</a>)info.GetValue(&quot;BackgroundImageLayout&quot;, typeof(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.ImageLayout.aspx"  title="Auto generated link to System.Windows.Forms.ImageLayout">System.Windows.Forms.ImageLayout</a>));
+                table.ForeColor = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Color.aspx"  title="Auto generated link to System.Drawing.Color">System.Drawing.Color</a>)info.GetValue(&quot;ForeColor&quot;, typeof(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Color.aspx"  title="Auto generated link to System.Drawing.Color">System.Drawing.Color</a>));
+                table.Size = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Size.aspx"  title="Auto generated link to System.Drawing.Size">System.Drawing.Size</a>)info.GetValue(&quot;Size&quot;, typeof(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Size.aspx"  title="Auto generated link to System.Drawing.Size">System.Drawing.Size</a>));
+         
+
+            }
+            catch (Exception ex)
+            {
+   
+                table = new MovableButton();
+            }
+
+            return table;
+        }
+    }
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">using</span>&nbsp;System;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.aspx"  title="Auto generated link to System.Runtime.Serialization">System.Runtime.Serialization</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters">System.Runtime.Serialization.Formatters</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.Formatters.Binary.aspx"  title="Auto generated link to System.Runtime.Serialization.Formatters.Binary">System.Runtime.Serialization.Formatters.Binary</a>;&nbsp;
+&nbsp;
+<span class="cs__keyword">namespace</span>&nbsp;YourProject&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;MovableButtonSurrogate&nbsp;:&nbsp;ISerializationSurrogate&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;occures&nbsp;when&nbsp;the&nbsp;object&nbsp;is&nbsp;going&nbsp;to&nbsp;serialize</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Current&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Serialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;info&quot;&gt;Serialization&nbsp;Info&nbsp;that&nbsp;Contains&nbsp;Which&nbsp;Property/Variable&nbsp;must&nbsp;Serialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;context&quot;&gt;Streaming&nbsp;Context&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;GetObjectData(<span class="cs__keyword">object</span>&nbsp;obj,&nbsp;SerializationInfo&nbsp;info,&nbsp;StreamingContext&nbsp;context)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MovableButton&nbsp;table&nbsp;=&nbsp;(MovableButton)obj;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info.AddValue(<span class="cs__string">&quot;Location&quot;</span>,&nbsp;table.Location);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info.AddValue(<span class="cs__string">&quot;Size&quot;</span>,&nbsp;table.Size);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info.AddValue(<span class="cs__string">&quot;Name&quot;</span>,&nbsp;table.Name);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info.AddValue(<span class="cs__string">&quot;BackgroundImage&quot;</span>,&nbsp;table.BackgroundImage);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info.AddValue(<span class="cs__string">&quot;BackgroundImageLayout&quot;</span>,&nbsp;table.BackgroundImageLayout);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info.AddValue(<span class="cs__string">&quot;ForeColor&quot;</span>,&nbsp;table.ForeColor);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;It&nbsp;occures&nbsp;when&nbsp;the&nbsp;object&nbsp;is&nbsp;going&nbsp;to&nbsp;deserialize</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;obj&quot;&gt;Current&nbsp;Object&nbsp;that&nbsp;Must&nbsp;Deserialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;info&quot;&gt;Serialization&nbsp;Info&nbsp;that&nbsp;Contains&nbsp;Which&nbsp;Property/Variable&nbsp;must&nbsp;Deserialize&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;context&quot;&gt;Streaming&nbsp;Context&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;selector&quot;&gt;Custom&nbsp;ISurrogateSelector&nbsp;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">object</span>&nbsp;SetObjectData(<span class="cs__keyword">object</span>&nbsp;obj,&nbsp;SerializationInfo&nbsp;info,&nbsp;StreamingContext&nbsp;context,&nbsp;ISurrogateSelector&nbsp;selector)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MovableButton&nbsp;table&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MovableButton();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.Location&nbsp;=&nbsp;(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Point.aspx"  title="Auto generated link to System.Drawing.Point">System.Drawing.Point</a>)info.GetValue(<span class="cs__string">&quot;Location&quot;</span>,&nbsp;<span class="cs__keyword">typeof</span>(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Point.aspx"  title="Auto generated link to System.Drawing.Point">System.Drawing.Point</a>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.Name&nbsp;=&nbsp;info.GetString(<span class="cs__string">&quot;Name&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.BackgroundImage&nbsp;=&nbsp;(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Image.aspx"  title="Auto generated link to System.Drawing.Image">System.Drawing.Image</a>)info.GetValue(<span class="cs__string">&quot;BackgroundImage&quot;</span>,&nbsp;<span class="cs__keyword">typeof</span>(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Image.aspx"  title="Auto generated link to System.Drawing.Image">System.Drawing.Image</a>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.BackgroundImageLayout&nbsp;=&nbsp;(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.ImageLayout.aspx"  title="Auto generated link to System.Windows.Forms.ImageLayout">System.Windows.Forms.ImageLayout</a>)info.GetValue(<span class="cs__string">&quot;BackgroundImageLayout&quot;</span>,&nbsp;<span class="cs__keyword">typeof</span>(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.ImageLayout.aspx"  title="Auto generated link to System.Windows.Forms.ImageLayout">System.Windows.Forms.ImageLayout</a>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.ForeColor&nbsp;=&nbsp;(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Color.aspx"  title="Auto generated link to System.Drawing.Color">System.Drawing.Color</a>)info.GetValue(<span class="cs__string">&quot;ForeColor&quot;</span>,&nbsp;<span class="cs__keyword">typeof</span>(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Color.aspx"  title="Auto generated link to System.Drawing.Color">System.Drawing.Color</a>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.Size&nbsp;=&nbsp;(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Size.aspx"  title="Auto generated link to System.Drawing.Size">System.Drawing.Size</a>)info.GetValue(<span class="cs__string">&quot;Size&quot;</span>,&nbsp;<span class="cs__keyword">typeof</span>(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Size.aspx"  title="Auto generated link to System.Drawing.Size">System.Drawing.Size</a>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception&nbsp;ex)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MovableButton();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;table;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:small">&nbsp;ISerializationSurrogate is an interface that can help you to serialize native objects, after implementation you will get two methods called &quot;GetObjectData&quot; and &quot;SetObjectData&quot;, GetObjectData executes
+ when the object is going to serialize and SetObjectData executes when the object is going to deserialize. Both of them have SerializationInfo object as parameter, SerializationInfo has two methods called &quot;GetValue&quot; and &quot;SetValue&quot;, SetValue is for data serialization
+ and GetValue is for data deserialization. as you can see in above code snippet, I've used both method.</span></div>
+<div class="endscriptcode"><span style="font-size:small">Now we have the base, below code snippet shows you how to use those classes.</span></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"><span style="font-size:small">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">            List&lt;MovableButton&gt; tables = new List&lt;MovableButton&gt;();
+
+            foreach (MovableButton table in MapHolder.Controls)
+                tables.Add(table);
+
+            YourProject.BinarySerializer.ToBin(ApplicationFolder &#43; &quot;\\TableLayout.tbl&quot;, tables, new MovableButtonSurrogate(), typeof(MovableButton));
+
+            tables.Clear();</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;MovableButton&gt;&nbsp;tables&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;List&lt;MovableButton&gt;();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(MovableButton&nbsp;table&nbsp;<span class="cs__keyword">in</span>&nbsp;MapHolder.Controls)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tables.Add(table);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YourProject.BinarySerializer.ToBin(ApplicationFolder&nbsp;&#43;&nbsp;<span class="cs__string">&quot;\\TableLayout.tbl&quot;</span>,&nbsp;tables,&nbsp;<span class="cs__keyword">new</span>&nbsp;MovableButtonSurrogate(),&nbsp;<span class="cs__keyword">typeof</span>(MovableButton));&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tables.Clear();</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;MovableButton is a class that derived from Button class, and MapHolder control is the layout control to host the MovableButton objects. ToBin method accepts four parameters that listed down as below;</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">First: File location.</div>
+<div class="endscriptcode">Second: Source Object that is going to serialize.</div>
+<div class="endscriptcode">Third: New object of the class that derived from ISerializationSurrogate interface</div>
+<div class="endscriptcode">Fourth: The type of the source object.</div>
+</span></div>
+<ul>
+<span style="font-size:x-small"><br>
+</span></ul>
+<h1>More Information</h1>
+<p><span style="font-size:small">For more information please visit my official website at
+<a title="Hfard.com" href="http://www.hfard.com">www.hfard.com</a></span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
