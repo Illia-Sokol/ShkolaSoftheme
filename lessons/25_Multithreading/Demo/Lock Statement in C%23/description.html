@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=EC831D2F780A53CF4C404B53E768954F" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/6e8c1264-f0b2-4b71-999e-f052f0393caeCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=DF234F4FF3DA5D35A03D2829D4F99E0D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Lock Statement in C#</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Lock Statement in C#</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            threading, Locks
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/14/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Lock-Statement-in-C-05a59cae">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div style="text-align:justify"><a href="http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">Lock</a> statement can be really useful when you are writing multi threaded applications. Basically what
+<a href="http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock</a> statement does is, it monitors and prevents some particular blocks of code from being accessed simultaneously by multiple threads.<br>
+<br>
+</div>
+<div style="text-align:justify">It's always good to go by an example. First I am creating a very simple multi threaded application without any lock statements. I am having a class there named &ldquo;MyClass&rdquo; which will have a single method.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:1000px; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">public</span> <span style="color:blue">class</span> MyClass</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">public</span> <span style="color:blue">void</span> MyMethodWithoutLock()</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        Thread.Sleep(5000);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        Console.WriteLine(<span style="color:#006080">&quot;Without Lock &quot;</span> &#43; DateTime.Now);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">}</pre>
+</div>
+</div>
+<div style="text-align:justify">Inside the above method, let&rsquo;s assume that I am doing some time consuming work and then I am printing out a message with the current time.<br>
+<br>
+Inside the Main method, I am going to create an object of &ldquo;MyClass&rdquo; and I am going to call the &ldquo;MyMethodWithoutLock&rdquo; from different threads.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:1000px; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">class</span> Program</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">static</span> <span style="color:blue">void</span> Main(<span style="color:blue">string</span>[] args)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        MyClass oMyClass = <span style="color:blue">new</span> MyClass();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        List&lt;Thread&gt; threads = <span style="color:blue">new</span> List&lt;Thread&gt;();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        <span style="color:blue">for</span> (<span style="color:blue">int</span> i = 0; i &lt; 5; i&#43;&#43;)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            Thread t = <span style="color:blue">new</span> Thread(oMyClass.MyMethodWithoutLock);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">            threads.Add(t);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        <span style="color:blue">foreach</span> (Thread t <span style="color:blue">in</span> threads)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            t.Start();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        Console.WriteLine(DateTime.Now);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">}</pre>
+</div>
+</div>
+<div style="text-align:justify">Here there is nothing complex, just some very simple multi threading. I have created an object of &quot;MyClass&quot; and created a variable to hold list of threads. Then I have added 5 threads to threads list which will call the &ldquo;MyMethodWithoutLock&rdquo;
+ of my one and only object &ldquo;oMyClass&rdquo;. Finally I am starting all the threads at once and printing out the current time. Please note that in my Main method, I have created only a single object of &ldquo;MyClass&rdquo;.</div>
+<div></div>
+<div style="text-align:justify">So the output will be as follows.</div>
+<table class="tr-caption-container" cellspacing="0" cellpadding="0" align="center" style="text-align:center; margin-left:auto; margin-right:auto">
+<tbody>
+<tr>
+<td><a href="http://lh6.ggpht.com/-tiOL5SL5cnM/Us-Ngm4o93I/AAAAAAAACCM/8Rg5TWp5VWU/s1600-h/Pic1%25255B17%25255D.png" style="margin-left:auto; margin-right:auto"><img title="Pic1" src="description/Pic1_thumb%255B9%255D.png" alt="Pic1" width="277" height="92" style="border-width:0px; float:none; padding-top:0px; padding-left:0px; margin-left:auto; display:block; padding-right:0px; margin-right:auto; border-style:solid"></a></td>
+</tr>
+<tr>
+<td class="tr-caption">Without Lock</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align:justify"><br>
+As you can see after starting the threads at 11:35:01, all the threads have completed calling &ldquo;MyMethodWithoutLock&rdquo; simultaneously at 11:35:06. So the point here is all threads have been calling &ldquo;MyMethodWithoutLock&rdquo; at the same time
+ which is a perfect concurrency.</div>
+<div></div>
+<div style="text-align:justify">Now let&rsquo;s say, I have a scenario where I have two methods. One method should be called simultaneously and the other should not be called simultaneously. For this I can use the
+<a href="http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock</a> statement and let&rsquo;s see how.</div>
+<div></div>
+<div style="text-align:justify">Hers is my modified class.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:1000px; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">public</span> <span style="color:blue">class</span> MyClass</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">private</span> Object thisLock = <span style="color:blue">new</span> Object();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">public</span> <span style="color:blue">void</span> MyMethodWithoutLock()</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        Thread.Sleep(5000);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        Console.WriteLine(<span style="color:#006080">&quot;Without Lock &quot;</span> &#43; DateTime.Now);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">public</span> <span style="color:blue">void</span> MyMethodWithLock()</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        <span style="color:blue">lock</span> (thisLock)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">            Thread.Sleep(5000);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            Console.WriteLine(<span style="color:#006080">&quot;With Lock &quot;</span> &#43; DateTime.Now);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">}</pre>
+</div>
+</div>
+<div style="text-align:justify">Inside Main, I will have some threads as previous, the only difference is, my threads will be calling both these two methods as below.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:1000px; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">class</span> Program</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">static</span> <span style="color:blue">void</span> Main(<span style="color:blue">string</span>[] args)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        MyClass oMyClass = <span style="color:blue">new</span> MyClass();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        List&lt;Thread&gt; threads = <span style="color:blue">new</span> List&lt;Thread&gt;();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        <span style="color:blue">for</span> (<span style="color:blue">int</span> i = 0; i &lt; 5; i&#43;&#43;)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            Thread t = <span style="color:blue">new</span> Thread(<span style="color:blue">new</span> ThreadStart(() =&gt;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">            {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">                oMyClass.MyMethodWithoutLock();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">                oMyClass.MyMethodWithLock();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            }));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">            threads.Add(t);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        <span style="color:blue">foreach</span> (Thread t <span style="color:blue">in</span> threads)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            t.Start();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        Console.WriteLine(DateTime.Now);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">}</pre>
+</div>
+</div>
+<p>Now the output will be as follows.</p>
+<table class="tr-caption-container" cellspacing="0" cellpadding="0" align="center" style="text-align:center; margin-left:auto; margin-right:auto">
+<tbody>
+<tr>
+<td><a href="http://lh6.ggpht.com/-V8KinlBnKBc/Us-NiOzeSnI/AAAAAAAACCc/dtdbfPKRCMw/s1600-h/Pic2%25255B47%25255D.png" style="margin-left:auto; margin-right:auto"><img title="Pic2" src="description/Pic2_thumb%255B45%255D.png" alt="Pic2" width="280" height="155" style="border-width:0px; float:none; padding-top:0px; padding-left:0px; margin-left:auto; display:block; padding-right:0px; margin-right:auto; border-style:solid"></a></td>
+</tr>
+<tr>
+<td class="tr-caption">With Lock</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align:justify"><br>
+If you can see here, my set of threads has called &ldquo;MyMethodWithoutLock&rdquo; method simultaneously. But &ldquo;MyMethodWithLock&rdquo; method has been called by only one single thread at a time. After one thread completed executing &ldquo;MyMethodWithLock&rdquo;
+ method, then another thread came in and has accessed &ldquo;MyMethodWithLock&rdquo;.</div>
+<div></div>
+<div style="text-align:justify">Now if you have read the above well, I have mentioned I have created only a single object of &ldquo;MyClass&rdquo;. Let&rsquo;s modify the above code where I am creating several objects of &ldquo;MyClass&rdquo; and each thread
+ will be accessing separate objects&rsquo; methods.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:1000px; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">class</span> Program</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">static</span> <span style="color:blue">void</span> Main(<span style="color:blue">string</span>[] args)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        List&lt;Thread&gt; threads = <span style="color:blue">new</span> List&lt;Thread&gt;();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        <span style="color:blue">for</span> (<span style="color:blue">int</span> i = 0; i &lt; 5; i&#43;&#43;)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">            Thread t = <span style="color:blue">new</span> Thread(<span style="color:blue">new</span> ThreadStart(() =&gt;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">                MyClass oMyClass = <span style="color:blue">new</span> MyClass();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">                oMyClass.MyMethodWithoutLock();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">                oMyClass.MyMethodWithLock();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            }));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">            threads.Add(t);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">        <span style="color:blue">foreach</span> (Thread t <span style="color:blue">in</span> threads)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">            t.Start();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">        Console.WriteLine(DateTime.Now);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; padding:0px; direction:ltr; margin:0em; line-height:12pt; background-color:white">}</pre>
+</div>
+</div>
+<p>So the output will be as follows.</p>
+<table class="tr-caption-container" cellspacing="0" cellpadding="0" align="center" style="text-align:center; margin-left:auto; margin-right:auto">
+<tbody>
+<tr>
+<td><a href="http://lh4.ggpht.com/-zgUPh0QDkOA/Us-NjnuuewI/AAAAAAAACCs/CLRo5pIJgXk/s1600-h/Pic3%25255B47%25255D.png" style="margin-left:auto; margin-right:auto"><img title="Pic3" src="description/Pic3_thumb%255B45%255D.png" alt="Pic3" width="284" height="151" style="border-width:0px; float:none; padding-top:0px; padding-left:0px; margin-left:auto; display:block; padding-right:0px; margin-right:auto; border-style:solid"></a></td>
+</tr>
+<tr>
+<td class="tr-caption">With Lock Different Objects</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align:justify"><br>
+Now here what has happened is both the methods have been called simultaneously back again. This explains the very basic concept of the lock statement. That is
+<a href="http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock</a> will only be blocking some code from accessing multiple threads only when the code belongs to the same object. If the threads are accessing same method of different objects and still you
+ want to block some code from multi thread access, if you use <a href="http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">
+lock</a> statement, basically it&rsquo;s not going to help you.</div>
+<p><br>
+For more information,<br>
+&nbsp; &nbsp;<a href="http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock Statement (C# Reference)</a><br>
+&nbsp; &nbsp;<a href="http://msdn.microsoft.com/en-us/library/ms173179.aspx">Thread Synchronization</a><br>
+<br>
+So hope this helps. Appreciate you feedback.<br>
+<br>
+Happy Coding.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
