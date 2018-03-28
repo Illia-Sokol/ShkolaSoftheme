@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=2C5971170CD50D071D8444DDD87E68CD" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=01F89A31F1103BC3B9A3B2562E9C41B3" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Data Parallelism (Task Parallel Library)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Data Parallelism (Task Parallel Library)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Task Parallel Library
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Data Parallelism
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/26/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Data-Parallelism-Task-8bf28aaa">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div style="text-align:justify">The Task Parallel Library (TPL) was introduced with .NET Framework 4 and it is the preferred way to write multi threaded and parallel code starting from .NET Framework 4. Basically TPL is a set of public types and APIs in the
+<a href="http://msdn.microsoft.com/en-us/library/system.threading(v=vs.110).aspx">
+System.Threading</a> and <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks(v=vs.110).aspx">
+System.Threading.Tasks</a> namespaces. <br>
+<br>
+</div>
+<div style="text-align:justify">TPL is mainly categorized into following three categories,</div>
+<ul>
+<li>
+<div style="text-align:justify">Data Parallelism</div>
+</li><li>
+<div style="text-align:justify">Task Parallelism</div>
+</li><li>
+<div style="text-align:justify">TPL with Asynchronous Programming Model (APM) and Event-based Asynchronous Pattern (EAP)</div>
+</li></ul>
+<div style="text-align:justify">In this wiki let's see what Data Parallelism is.<br>
+<br>
+</div>
+<h2 style="text-align:justify">What is Data Parallelism</h2>
+<div style="text-align:justify"><br>
+In simple Data Parallelism is concurrently accessing and performing <strong>some heavy operation</strong> on items in a source collection or array (to be more specific here, any collection which implements
+<a href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx" >
+Enumerable</a> or <a href="http://msdn.microsoft.com/en-us/library/9eekhta0.aspx" >
+IEnumerable&lt;T&gt;</a>). The reason for highlighting&nbsp;<strong>some heavy operation</strong> is, sometimes parallel operations can slow down or decrease the performance. So as a best practice, do use TPL only when it is necessary, in situations like where
+ you have hundreds of items to iterate and do some heavy processing on each of those item.<br>
+<br>
+</div>
+<div style="text-align:justify">Now let&rsquo;s see some code in action. For Data Parallelism we are using
+<a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.for.aspx">
+Parallel.For</a> and <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a> methods which are available in <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.aspx">
+System.Threading.Tasks.Parallel</a> class. Basically <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.for.aspx">
+Parallel.For</a> and <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a> will be used to accomplish what <a href="http://msdn.microsoft.com/en-us/library/ch45axte.aspx">
+for</a> and <a href="http://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx">foreach</a> loops does, only difference is the iterations will be done in parallel.<br>
+<br>
+</div>
+<div style="text-align:justify">For the demonstration, let's use&nbsp;<a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">Parallel.ForEach</a> on a
+<a href="http://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" >List&lt;T&gt;.</a><br>
+<br>
+</div>
+<div style="text-align:justify">Let's create a console application and there let's have the following type which is &ldquo;Employee&rdquo;.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:2000px; text-align:left; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt; text-align:left; background-color:#f4f4f4">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">public</span> <span style="color:blue">class</span> Employee</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">public</span> <span style="color:blue">int</span> EmployeeId { get; set; }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    <span style="color:blue">public</span> <span style="color:blue">string</span> FirstName { get; set; }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">public</span> <span style="color:blue">int</span> CalculatedProperty { get; set; }<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">    </span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">public</span> <span style="color:blue">static</span> List&lt;Employee&gt; GetEmployees()</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">        <span style="color:blue">return</span> <span style="color:blue">new</span> List&lt;Employee&gt;() </pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">        { </pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">            <span style="color:blue">new</span> Employee(){EmployeeId=1,FirstName=<span style="color:#006080">&quot;Jaliya&quot;</span>},</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">            <span style="color:blue">new</span> Employee(){EmployeeId=2,FirstName=<span style="color:#006080">&quot;John&quot;</span>},</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">            <span style="color:blue">new</span> Employee(){EmployeeId=3,FirstName=<span style="color:#006080">&quot;Jane&quot;</span>}</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">        };</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">}</pre>
+</div>
+</div>
+<div style="text-align:justify">Here GetEmployees() is a helper method which will return some data.<br>
+<br>
+Now let's have a method where we are passing a Employee, and the method will do some calculation and will assign the calculated result to CalculatedPropery of Employee.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:2000px; text-align:left; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt; text-align:left; background-color:#f4f4f4">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">static</span> Random oRandom = <span style="color:blue">new</span> Random();<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">&nbsp;</span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">static</span> <span style="color:blue">void</span> ProcessEmployee(Employee employee)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// showing the current thread which the process runs in</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Console.WriteLine(<span style="color:blue">string</span>.Format(<span style="color:#006080">&quot;{0}'s Calculation Started on Thread {1}.&quot;</span>, employee.FirstName, Thread.CurrentThread.ManagedThreadId));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// to demonstrate a long operation, I am putting a thread sleep </span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Thread.Sleep(5000);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// getting a random number to make it look nice</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    employee.CalculatedProperty = oRandom.Next(0, 10000);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    Console.WriteLine(<span style="color:blue">string</span>.Format(<span style="color:#006080">&quot;{0}'s Calculation Completed.&quot;</span>, </pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">        employee.FirstName));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">}</pre>
+&lt;!--CRLF--&gt;</div>
+</div>
+<div style="text-align:justify">Here let's put a Thread.Sleep for 5 seconds to demonstrate time consuming operation and setting up a random number for CalculatedPropery of Employee (just to demonstrate).</div>
+<div></div>
+<div style="text-align:justify">Now let&rsquo;s move into the Main method.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:2000px; text-align:left; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt; text-align:left; background-color:#f4f4f4">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">static</span> <span style="color:blue">void</span> Main(<span style="color:blue">string</span>[] args)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">{</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// stopwatch to get the time taken to complete </span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Stopwatch watch = <span style="color:blue">new</span> Stopwatch();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    watch.Start();<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">&nbsp;</span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    var employeeList = Employee.GetEmployees();<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">&nbsp;</span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// for each employee, do the processing</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    <span style="color:blue">foreach</span> (var item <span style="color:blue">in</span> employeeList)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">        ProcessEmployee(item);</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    }<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">&nbsp;</span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// process completed</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    <span style="color:green">// stop the watch and print the elapsed time</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    watch.Stop();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Console.WriteLine(<span style="color:blue">string</span>.Format(<span style="color:#006080">&quot;\nTime taken to complete = {0}s\n&quot;</span>,watch.Elapsed.Seconds.ToString()));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<span style="font-size:8pt; line-height:12pt">&nbsp;</span><span style="font-size:8pt; line-height:12pt; color:green">&nbsp;&nbsp;&nbsp; // just printing the result</span><br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:blue">foreach</span> (Employee employee <span style="color:blue">in</span> employeeList)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">        Console.WriteLine(<span style="color:blue">string</span>.Format(<span style="color:#006080">&quot;{0}'s Calculated Value {1}.&quot;</span>,employee.FirstName,employee.CalculatedProperty));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    Console.ReadLine();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">}</pre>
+&lt;!--CRLF--&gt;</div>
+</div>
+<div style="text-align:justify">Here first we have created a Stopwatch to get the time taken to complete. Then we are getting a List of employees and for each employee we are doing the heavy operation. After it&rsquo;s completed, stopping the watch and printing
+ the time took to complete. And finally printing the result (it&rsquo;s not much important anyway).</div>
+<div style="text-align:justify">&nbsp;</div>
+<div style="text-align:justify">So this is the output.</div>
+<p>&nbsp;</p>
+<table class="tr-caption-container" cellspacing="0" cellpadding="0" align="center" style="text-align:center; margin-left:auto; margin-right:auto">
+<tbody>
+<tr>
+<td style="text-align:center"><a href="http://lh5.ggpht.com/-9mi-QDyXeVY/Unm7Hoa9t-I/AAAAAAAAB6E/cqZtw1Ny2_Y/s1600-h/Untitled4.png" style="margin-left:auto; margin-right:auto"><img title="Untitled" src="description/Untitled_thumb2.png" alt="Untitled" width="590" height="211" style="border-width:0px; float:none; padding-top:0px; padding-left:0px; margin-left:auto; display:block; padding-right:0px; margin-right:auto; border-style:solid"></a></td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align:center">Output : Thread.Sleep()</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align:justify"><br>
+OK, a neat output. Started on the first employee, completed his processing, moved to the second, and so on and so forth. So if to process a single item needs 5 seconds, to process 3 items you will need 15 seconds (a simple math). Everything is happening on
+ the same thread as usual.</div>
+<div style="text-align:justify">&nbsp;</div>
+<div style="text-align:justify">But what if we process all these 3 items in parallel? Then the amount of time taken should be less right? Let&rsquo;s use Data Parallelism and find out what the result is. let's modify the above code. Instead of doing a
+<a href="http://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx">foreach</a> on employee list, let's use
+<a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a>.<br>
+<br>
+</div>
+<div style="text-align:justify">Here is the code modified.</div>
+<div id="codeSnippetWrapper" style="overflow:auto; font-size:8pt; border:1px solid silver; font-family:'Courier New',courier,monospace; width:97.5%; padding:4px; direction:ltr; margin:20px 0px 10px; line-height:12pt; max-height:2000px; text-align:left; background-color:#f4f4f4">
+<div id="codeSnippet" style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; line-height:12pt; text-align:left; background-color:#f4f4f4">
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white"><span style="color:blue">static</span> <span style="color:blue">void</span> Main(<span style="color:blue">string</span>[] args)<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">{</span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// stopwatch to get the time taken to complete </span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Stopwatch watch = <span style="color:blue">new</span> Stopwatch();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    watch.Start();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">&nbsp;</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    var employeeList = Employee.GetEmployees();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// putting a Parallel.ForEach in employee list</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Parallel.ForEach(employeeList, e =&gt; ProcessEmployee(e));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">&nbsp;</pre>
+<span style="font-size:8pt; line-height:12pt">&nbsp;</span><span style="font-size:8pt; line-height:12pt; color:green">&nbsp;&nbsp;&nbsp; // process completed</span><br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// stop the watch and print the elapsed time</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    watch.Stop();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    Console.WriteLine(<span style="color:blue">string</span>.Format(<span style="color:#006080">&quot;\nTime taken to complete = {0}s\n&quot;</span>,watch.Elapsed.Seconds.ToString()));<span style="font-size:8pt; line-height:12pt; background-color:#f4f4f4">&nbsp;</span></pre>
+&lt;!--CRLF--&gt;<br>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    <span style="color:green">// just printing the result</span></pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    <span style="color:blue">foreach</span> (Employee employee <span style="color:blue">in</span> employeeList)</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    {</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">        Console.WriteLine(<span style="color:blue">string</span>.Format(<span style="color:#006080">&quot;{0}'s Calculated Value {1}.&quot;</span>,employee.FirstName,employee.CalculatedProperty));</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">    }</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:#f4f4f4">    Console.ReadLine();</pre>
+<pre style="border-style:none; overflow:visible; font-size:8pt; font-family:'Courier New',courier,monospace; width:100%; color:black; padding:0px; direction:ltr; text-align:left; margin:0em; line-height:12pt; background-color:white">}</pre>
+&lt;!--CRLF--&gt;</div>
+</div>
+<p>As you can see, we don&rsquo;t have a <a href="http://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx">
+foreach</a> on employee list, and instead we do have a&nbsp; <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a>. Now let&rsquo;s go ahead and run this and see the result.<br>
+<br>
+</p>
+<table class="tr-caption-container" cellspacing="0" cellpadding="0" align="center" style="text-align:center; margin-left:auto; margin-right:auto">
+<tbody>
+<tr>
+<td style="text-align:center"><a href="http://lh3.ggpht.com/--5hHNMJRcww/Unm7JYRUwOI/AAAAAAAAB6U/JWF0UPYOKak/s1600-h/Untitled14.png" style="margin-left:auto; margin-right:auto"><img title="Untitled1" src="description/Untitled1_thumb2.png" alt="Untitled1" width="590" height="211" style="border-width:0px; float:none; padding-top:0px; padding-left:0px; margin-left:auto; display:block; padding-right:0px; margin-right:auto; border-style:solid"></a></td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align:center">Output : Task.Delay()</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align:justify">So let&rsquo;s examine the printed messages from the top. First employees&rsquo; calculation is started on Thread
+<strong>10</strong>. In the same time, processing of other employees has been started on different threads. They have completed processing on different order (not a problem there). And amazingly time taken has been reduced to 5 seconds.</div>
+<div></div>
+<div style="text-align:justify">So there is something different from the previous run. What&rsquo;s is happening here is, when we are using
+<a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a>, the given action is happening on separate threads providing concurrency.</div>
+<div></div>
+<div style="text-align:justify"><strong>Something important to note here</strong>. When we mean separate threads, in a situation like where you have thousands of items in the collection, and when you use
+<a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a>, the framework will not spawn thousands of records. <a href="http://msdn.microsoft.com/en-us/library/ff963552.aspx" >
+According to MSDN</a>,</div>
+<blockquote>
+<div style="text-align:justify"><strong>The .NET thread pool adapts dynamically to changing workloads by allowing the number of worker threads for parallel tasks to change over time. At run time, the system observes whether increasing the number of threads
+ improves or degrades overall throughput and adjusts the number of worker threads accordingly.</strong></div>
+</blockquote>
+<div style="text-align:justify">In simple, when <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.foreach.aspx">
+Parallel.ForEach</a> is partitioning the collection, whether to spawn a new thread is decided based on continually monitoring the work done by the threads allocated. If a operation is still going on and a thread is waiting around, the algorithm will spawn up
+ more threads and re partition the collection between them. Please note that in some cases you can specify the degree of parallelism too.</div>
+<p><br>
+For more information,</p>
+<div style="text-align:justify">&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogs.msdn.com/b/pfxteam/archive/2009/05/26/9641563.aspx" >
+Does Parallel.For use one Task per iteration?</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>
