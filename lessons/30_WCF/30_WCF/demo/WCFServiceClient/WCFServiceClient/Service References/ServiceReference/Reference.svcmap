@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c9b88b5e-e930-4c87-8790-73b948722879" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:25342/DefaultWcfService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DefaultWcfService.disco" MetadataType="Disco" ID="861b7939-ca33-4b35-ad5f-208dbfd01784" SourceId="1" SourceUrl="http://localhost:25342/DefaultWcfService.svc?disco" />
+    <MetadataFile FileName="DefaultWcfService.wsdl" MetadataType="Wsdl" ID="8d8b6807-3e83-447d-942a-a5193e000aa6" SourceId="1" SourceUrl="http://localhost:25342/DefaultWcfService.svc?wsdl" />
+    <MetadataFile FileName="DefaultWcfService.xsd" MetadataType="Schema" ID="ffe1c640-25ae-4602-a633-b491c8ea3935" SourceId="1" SourceUrl="http://localhost:25342/DefaultWcfService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DefaultWcfService1.xsd" MetadataType="Schema" ID="5d344a2c-9fea-4002-805a-c250820a3de6" SourceId="1" SourceUrl="http://localhost:25342/DefaultWcfService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DefaultWcfService2.xsd" MetadataType="Schema" ID="f7842767-6fb1-4efb-8176-234fcd05f2b1" SourceId="1" SourceUrl="http://localhost:25342/DefaultWcfService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
