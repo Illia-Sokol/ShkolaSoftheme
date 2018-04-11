@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Introduction - DLR (Dynamic Language Runtime)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Introduction - DLR (Dynamic Language Runtime)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            DLR (Dynamic Language Runtime)
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/15/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Introduction-DLR-Dynamic-ae18fb00">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h2>Introduction</h2>
+<p>CLR (Common language runtime) is nothing new now, .NET developers are familiar with the CLR, how to work with the object. There is no doubt that now we can design our component and application easily using CLR.</p>
+<p>We will not discuss about the CLR. We will try to focus on the DLR ((Dynamic Language Runtime). At first, we need to know what is DLR. In a simply world, we can say that the DLR has some new features which added to common language runtime (CLR) for Microsoft
+ .NET Framework 4.0.</p>
+<p>More information about CLR can be found <a href="http://msdn.microsoft.com/en-us/library/ddk909ch%28VS.71%29.aspx">
+here</a>.</p>
+<h2>What Dynamic Types Do</h2>
+<p>Let&rsquo;s try to get some more. One of the powerful features of Microsoft .NET Framework 4.0 is the Dynamic Types.</p>
+<p>Dynamic Types allow us to write code in such a way that we can go around compile time checking. Note that bypass does not mean that we can remove the compile time errors, it means if the operation is not valid, then we cannot detect the error at compile
+ time. This error will appear only in run time.</p>
+<h2>How to Work with Dynamic Types</h2>
+<p>Microsoft .NET Framework 4.0 provides us the <code><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Dynamic.aspx"  title="Auto generated link to System.Dynamic">System.Dynamic</a></code> namespace. To use Dynamic Types, we need to add the references DLL of
+<code><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Dynamic.aspx"  title="Auto generated link to System.Dynamic">System.Dynamic</a></code>.</p>
+<div class="Caption">Figure: Showing the dynamic type of current object output.</div>
+<p><img src="description/DLR.jpg" border="0" alt="DLR.jpg" hspace="0" width="640" height="143" style="width:640px; height:143px"></p>
+<p>Well , I hope that you get the basics of DLR ((Dynamic Language Runtime), so let's try to play with a few code snippets and a few keywords of Microsoft Visual Studio .NET. We are familiar with the keyword &ldquo;<code>var</code>&rdquo; we will play with
+ this keyword, before that one interesting thing I must share is that it is possible to change an object type runtime? Probably your answer will be NO. But objects defined with dynamic keyword can change their type at runtime. Isn't it cool. A simple code example
+ is given below:<br>
+<br>
+More information about <code><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Dynamic.aspx"  title="Auto generated link to System.Dynamic">System.Dynamic</a> </code>can be found <a href="http://msdn.microsoft.com/en-us/library/system.dynamic.aspx">
+here</a>.</p>
+<h2>Using the Code</h2>
+<p>Here in this example below, we have a class called<code> Class1()</code>. The <code>
+Class1()</code> has two functions <code>displayMessage()</code> and <code>displayNumeric()</code>. Both functions are returning different values.</p>
+<div class="pre-action-link" id="premain0" style="display:block"><a href="http://www.codeproject.com/KB/dotnet/DLR_Example.aspx#"><br>
+</a></div>
+<pre id="pre0" lang="cs" style="margin-top:0pt"><span class="code-keyword"><div class="scriptcode"><div class="pluginEditHolder" pluginCommand="mceScriptCode"><div class="title"><span>C#</span></div><div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div><span class="hidden">csharp</span><pre class="hidden">static void Main(string[] args)
+{
+     dynamic myDynamicVariable;
+     // &quot;dynamic&quot; is keyword for declaring dynamic type variables 
+     var _objClass = new Class1();
+     // Creating object 
+
+     myDynamicVariable = _objClass.displayMessage();
+     Console.WriteLine(&quot;Value: &quot; &#43; myDynamicVariable &#43; &quot;. 
+	Type of dynamic variable is: &quot; &#43; myDynamicVariable.GetType());
+     // Displaying types
+     myDynamicVariable = _objClass.displayNumeric();
+     Console.WriteLine(&quot;\nValue: My CP Member Id # &quot; &#43; myDynamicVariable &#43; 
+	&quot;. Type of dynamic variable is: &quot; &#43; myDynamicVariable.GetType());
+     // Displaying types
+            
+      Console.ReadLine();
+}
+        class Class1
+        {
+            private string sMessage = &quot;The Code Project is COOL&quot;;
+            public string displayMessage()
+            {
+                return sMessage;
+            }
+            public int displayNumeric()
+            {
+                return 1186309;
+            }
+        } </pre>
+<div class="preview">
+<pre id="codePreview" class="csharp"><span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Main(<span class="cs__keyword">string</span>[]&nbsp;args)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;myDynamicVariable;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;&quot;dynamic&quot;&nbsp;is&nbsp;keyword&nbsp;for&nbsp;declaring&nbsp;dynamic&nbsp;type&nbsp;variables&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;_objClass&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Class1();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Creating&nbsp;object&nbsp;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myDynamicVariable&nbsp;=&nbsp;_objClass.displayMessage();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;Value:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;myDynamicVariable&nbsp;&#43;&nbsp;&quot;.&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Type&nbsp;of&nbsp;dynamic&nbsp;variable&nbsp;<span class="cs__keyword">is</span>:&nbsp;&quot;&nbsp;&#43;&nbsp;myDynamicVariable.GetType());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Displaying&nbsp;types</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myDynamicVariable&nbsp;=&nbsp;_objClass.displayNumeric();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;\nValue:&nbsp;My&nbsp;CP&nbsp;Member&nbsp;Id&nbsp;#&nbsp;&quot;</span>&nbsp;&#43;&nbsp;myDynamicVariable&nbsp;&#43;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;.&nbsp;Type&nbsp;of&nbsp;dynamic&nbsp;variable&nbsp;is:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;myDynamicVariable.GetType());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Displaying&nbsp;types</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ReadLine();&nbsp;
+}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;Class1&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;sMessage&nbsp;=&nbsp;<span class="cs__string">&quot;The&nbsp;Code&nbsp;Project&nbsp;is&nbsp;COOL&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;displayMessage()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;sMessage;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;displayNumeric()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;<span class="cs__number">1186309</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</pre>
+</div>
+</div>
+</div>
+</span></pre>
+<p>If you look, we have declared a dynamic variable <code>myDynamicVariable</code>.</p>
+<div class="pre-action-link" id="premain1" style="display:block"></div>
+<pre id="pre1" lang="cs" style="margin-top:0pt"><div class="scriptcode"><div class="pluginEditHolder" pluginCommand="mceScriptCode"><div class="title"><span>C#</span></div><div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div><span class="hidden">csharp</span><pre class="hidden">dynamic myDynamicVariable;
+// &quot;dynamic&quot; is keyword for declaring dynamic type variables </pre>
+<div class="preview">
+<pre id="codePreview" class="csharp">dynamic&nbsp;myDynamicVariable;&nbsp;
+<span class="cs__com">//&nbsp;&quot;dynamic&quot;&nbsp;is&nbsp;keyword&nbsp;for&nbsp;declaring&nbsp;dynamic&nbsp;type&nbsp;variables&nbsp;</span></pre>
+</div>
+</div>
+</div>
+<span class="code-comment"></span></pre>
+<p>So we are assigning <code>string </code>value to it and printing it in console, value as well as its type. This is all about Dynamic type.</p>
+<h2>Conclusion</h2>
+<p>I hope this might be helpful to you. Enjoy!</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
