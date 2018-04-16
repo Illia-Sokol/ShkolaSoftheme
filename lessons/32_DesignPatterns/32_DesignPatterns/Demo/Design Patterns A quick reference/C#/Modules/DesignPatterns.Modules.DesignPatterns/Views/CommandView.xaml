@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.CommandView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem Header="Prototype Pattern" IsSelected="True" Style="{StaticResource TabItemStyle}" Background="Transparent" >
+                <TextBlock Foreground="White" FontSize="20" Text="Delegate Command and Icommand is best example for Command Pattern:" 
+                               VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            </TabItem>
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource CommandStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or
+                                        log requests, and support undoable operations.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Also known as Action , Transaction.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Motivation :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Sometimes it's necessary to issue requests to objects without knowing anything about the operation being
+                                        requested or the receiver of the request. For example, user interface toolkits include objects like buttons and
+                                        menus that carry out a request in response to user input. But the toolkit can't implement the request explicitly
+                                        in the button or menu, because only applications that use the toolkit know what should be done on which
+                                        object. As toolkit designers we have no way of knowing the receiver of the request or the operations that will
+                                        carry it out.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Command pattern lets toolkit objects make requests of unspecified application objects by turning the
+                                        request itself into an object. This object can be stored and passed around like other objects. The key to this
+                                        pattern is an abstract Command class, which declares an interface for executing operations. In the simplest
+                                        form this interface includes an abstract Execute operation. Concrete Command subclasses specify a receiveraction
+                                        pair by storing the receiver as an instance variable and by implementing Execute to invoke the request.
+                                        The receiver has the knowledge required to carry out the request.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Applicability :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Parameterize objects by an action to perform, as MenuItem objects did above. You can express such
+                                        parameterization in a procedural language with a callback function, that is, a function that's registered
+                                        somewhere to be called at a later point. Commands are an object-oriented replacement for callbacks.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Specify, queue, and execute requests at different times. A Command object can have a lifetime
+                                        independent of the original request. If the receiver of a request can be represented in an address spaceindependent
+                                        way, then you can transfer a command object for the request to a different process and
+                                        fulfill the request there.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Support undo. The Command's Execute operation can store state for reversing its effects in the
+                                        command itself. The Command interface must have an added Unexecute operation that reverses the
+                                        effects of a previous call to Execute. Executed commands are stored in a history list. Unlimited-level
+                                        undo and redo is achieved by traversing this list backwards and forwards calling Unexecute and
+                                        Execute, respectively.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                       Support logging changes so that they can be reapplied in case of a system crash. By augmenting the
+                                        Command interface with load and store operations, you can keep a persistent log of changes.
+                                        Recovering from a crash involves reloading logged commands from disk and reexecuting them with the
+                                        Execute operation.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        structure a system around high-level operations built on primitives operations. Such a structure is
+                                        common in information systems that support transactions. A transaction encapsulates a set of changes
+                                        to data. The Command pattern offers a way to model transactions. Commands have a common interface, letting you invoke all transactions the same way. 
+                                        The pattern also makes it easy to extend the
+                                        system with new transactions.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="Participants"  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Command :</Paragraph>
+                            <List Margin="0" Padding="0" >
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Declares an interface for executing an operation.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ConcreteCommand :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Defines a binding between a Receiver object and an action.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                      Implements Execute by invoking the corresponding operation(s) on Receiver.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Client :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Creates a ConcreteCommand object and sets its receiver.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Invoker :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Asks the command to carry out the request.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Receiver :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        knows how to perform the operations associated with carrying out a request. Any class may
+                                        serve as a Receiver.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

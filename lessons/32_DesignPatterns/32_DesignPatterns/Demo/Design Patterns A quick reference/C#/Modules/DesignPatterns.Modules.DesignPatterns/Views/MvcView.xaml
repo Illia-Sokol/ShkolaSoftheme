@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.MvcView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource MVCStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        The MVC pattern comprises three objects, each one in charge of a specific function in the UI 
+                                        context. 
+                                    </Paragraph>
+                                </ListItem>
+
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        You can apply the MVC pattern in a web application (which is a stateless application 
+                                        by design) where the Controller is in charge of processing user inputs and coordinating
+                                        server-side calls until the View is rendered (as with ASP.NET MVC);
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        however, you can also apply this pattern to a stateful Client UI technology such as Windows Forms or WPF.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="Participants"  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Model :</Paragraph>
+                            <List Margin="0" Padding="0" >
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Model represents the data in the application in a logical way; it is in charge of carrying
+                                         the data and making other objects aware of data changes.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                View:
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The View is the graphical representation of the Model; it is responsible for displaying the
+                                        Model data in suitable form.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Presenter:
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Controller is the orchestrator of this pattern; it is in charge of intercepting user input
+                                        (mouse and keyboard) and interacting with the Model and/or the View.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

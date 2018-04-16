@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Repository Pattern Demo</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Repository Pattern Demo</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Silverlight, WCF RIA Services, LINQToSQL
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Repository Pattern
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/13/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Repository-Pattern-Demo-fece07ed">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample demonstrates how DAL layer can be mocked to Unit Test business logic code implemented in DomainService class. In this sample this is done my implementing a repository pattern, specifically a repository pattern with Linq To SQL as DAL.</p>
+<p>&nbsp;</p>
+<p>This sample uses the Walkthrough project [<a href="http://code.msdn.microsoft.com/Getting-Started-WCF-RIA-1469cbe2" >http://code.msdn.microsoft.com/Getting-Started-WCF-RIA-1469cbe2</a>] as the starting point for implementation.
+<br>
+<br>
+</p>
+<h1>Database setup</h1>
+<p><br>
+This sample uses AdventureWorks database which can be downloaded from <a href="http://www.codeplex.com/MSFTDBProdSamples/Release/ProjectReleases.aspx?ReleaseId=4004" >
+http://www.codeplex.com/MSFTDBProdSamples/Release/ProjectReleases.aspx?ReleaseId=4004</a><br>
+<br>
+</p>
+<h1>Instructions for running the sample</h1>
+<p>&nbsp;</p>
+<ol>
+<li>Copy the sources from the zip file </li><li>Open the HRAppCS.sln file in Visual Studio.NET 2008 SP1 </li><li>Set startup project to be HRApp.Web project in Solution Explorer </li><li>Set startup page to be default.html in Solution Explorer </li><li>Add the database file AdventureWorks_data.mdf file to HRApp.Web\App_Data folder
+</li><li>Ctrl &#43; F5 to run the sample </li></ol>
+<h1><br>
+Instructions for running the unit tests</h1>
+<p><br>
+The sample uses Visual Studio Team Test project for creating unit tests.</p>
+<ol>
+<li>Open HRAppCS.vsmdi from 'Solution Items' in SolutionExplorer </li><li>Select the tests you want to run </li><li>Click 'Test' menu and select 'Run tests in current context </li></ol>
+<h1>WCF RIA Services</h1>
+<p>Microsoft WCF RIA Services simplifies the traditional n-tier application pattern by bringing together the ASP.NET and Silverlight platforms using WCF. The RIA Services provides a prescriptive pattern to write application logic that runs on the mid-tier and
+ controls access to data for queries, changes and custom operations. It also provides end-to-end support for common tasks such as data validation, authentication and roles by integrating with Silverlight components on the client and ASP.NET on the mid-tier.
+ It includes rich tooling for integrating client and mid-tier projects and for building rich UI through the simplicity of drag-drop support.&nbsp;</p>
+<p>&nbsp;</p>
+<p>For the latest information please click&nbsp;<a href="http://silverlight.net/riaservices">here</a>&nbsp;.</p>
+<p>&nbsp;</p>
+<p>RIA Services Home Page with links to the download site, MSDN docs, talks ... can be found&nbsp;<a href="http://silverlight.net/RIAServices">here</a>.</p>
+<p>&nbsp;</p>
+<p>For help porting applications to the latest bits -&nbsp;<a href="http://archive.msdn.microsoft.com/RiaServices/Release/ProjectReleases.aspx?ReleaseId=3570">Breaking Changes from Beta(PDC 09) to RTW</a></p>
+<p>&nbsp;</p>
+<p>The document above also insludes guidance on updating VS 2008/.NET 3.5 RIA Services applications to VS 2010/.NET 4</p>
+<p>Please use the&nbsp;<a href="http://silverlight.net/forums/53.aspx">forums</a>&nbsp;to provide feedback or post questions.</p>
+<p>&nbsp;</p>
+<h2>Sample download instructions</h2>
+<p>Please note that once you have downloaded a Sample.zip from below to your machine, you need to right click on the .zip, go to the Property Page and explicitly UnBlock the content. Only then should you extract the .zip file.</p>
+<ol>
+</ol>
+
+</div>
+
+
+    </div>
+</body>
+</html>

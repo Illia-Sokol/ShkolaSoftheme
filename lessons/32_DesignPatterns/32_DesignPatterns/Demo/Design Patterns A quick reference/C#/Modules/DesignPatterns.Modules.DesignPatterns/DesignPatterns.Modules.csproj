@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC8826EA-DD48-42D3-9D9A-AECA5B756DB5}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesignPatterns.Modules</RootNamespace>
+    <AssemblyName>DesignPatterns.Modules</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\References\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\..\References\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\..\References\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions">
+      <HintPath>..\..\References\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\References\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\References\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignPatternModule.cs" />
+    <Compile Include="Models\AdapterModel.cs" />
+    <Compile Include="Models\BridgeModel.cs" />
+    <Compile Include="Models\DecoratorModel.cs" />
+    <Compile Include="Models\FacadeModel.cs" />
+    <Compile Include="Models\FactoryMethodModel.cs" />
+    <Compile Include="Models\IteratorModel.cs" />
+    <Compile Include="Models\ObserverModel.cs" />
+    <Compile Include="Models\PrototypeModel.cs" />
+    <Compile Include="Models\ProxyModel.cs" />
+    <Compile Include="Models\SingletonModel.cs" />
+    <Compile Include="Models\VisitorModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModels\AdapterViewModel.cs" />
+    <Compile Include="ViewModels\BridgeViewModel.cs" />
+    <Compile Include="ViewModels\CustomCommandViewModel.cs" />
+    <Compile Include="ViewModels\DecoratorViewModel.cs" />
+    <Compile Include="ViewModels\FacadeViewModel.cs" />
+    <Compile Include="ViewModels\FactoryMethodViewModel.cs" />
+    <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\IteratorViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel1.cs" />
+    <Compile Include="ViewModels\ObserverViewModel.cs" />
+    <Compile Include="ViewModels\PrototypeViewModel.cs" />
+    <Compile Include="ViewModels\ProxyViewModel.cs" />
+    <Compile Include="ViewModels\SingletonViewModel.cs" />
+    <Compile Include="ViewModels\VisitorViewModel.cs" />
+    <Compile Include="Views\AboutMeView.xaml.cs">
+      <DependentUpon>AboutMeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdapterView.xaml.cs">
+      <DependentUpon>AdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BridgeView.xaml.cs">
+      <DependentUpon>BridgeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuilderView.xaml.cs">
+      <DependentUpon>BuilderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChainOfResponseView.xaml.cs">
+      <DependentUpon>ChainOfResponseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommandView.xaml.cs">
+      <DependentUpon>CommandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompositeView.xaml.cs">
+      <DependentUpon>CompositeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DecoratorView.xaml.cs">
+      <DependentUpon>DecoratorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventAggregatorView.xaml.cs">
+      <DependentUpon>EventAggregatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FacadeView.xaml.cs">
+      <DependentUpon>FacadeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FactoryMethodView.xaml.cs">
+      <DependentUpon>FactoryMethodView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FlyweightView.xaml.cs">
+      <DependentUpon>FlyweightView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeaderView.xaml.cs">
+      <DependentUpon>HeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InterperterView.xaml.cs">
+      <DependentUpon>InterperterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IteratorView.xaml.cs">
+      <DependentUpon>IteratorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LazyLoadView.xaml.cs">
+      <DependentUpon>LazyLoadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediatorView.xaml.cs">
+      <DependentUpon>MediatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MementoView.xaml.cs">
+      <DependentUpon>MementoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MvcView.xaml.cs">
+      <DependentUpon>MvcView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MvpView.xaml.cs">
+      <DependentUpon>MvpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NullObjectView.xaml.cs">
+      <DependentUpon>NullObjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ObserverView.xaml.cs">
+      <DependentUpon>ObserverView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrototypeView.xaml.cs">
+      <DependentUpon>PrototypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProxyView.xaml.cs">
+      <DependentUpon>ProxyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RepositoryView.xaml.cs">
+      <DependentUpon>RepositoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceLocatorView.xaml.cs">
+      <DependentUpon>ServiceLocatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SingletonView.xaml.cs">
+      <DependentUpon>SingletonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StateView.xaml.cs">
+      <DependentUpon>StateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StrategyView.xaml.cs">
+      <DependentUpon>StrategyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateView.xaml.cs">
+      <DependentUpon>TemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnitOfWorkView.xaml.cs">
+      <DependentUpon>UnitOfWorkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VisitorView.xaml.cs">
+      <DependentUpon>VisitorView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\DesignPatterns.Common\DesignPatterns.Common.csproj">
+      <Project>{5E5EAE97-9255-4704-9764-08E20BD5C06C}</Project>
+      <Name>DesignPatterns.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\AboutMeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BridgeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuilderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChainOfResponseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CommandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CompositeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DecoratorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventAggregatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FacadeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FactoryMethodView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FlyweightView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InterperterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IteratorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LazyLoadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MediatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MementoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MvcView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MvpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NullObjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObserverView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrototypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProxyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RepositoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceLocatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SingletonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StrategyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UnitOfWorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VisitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

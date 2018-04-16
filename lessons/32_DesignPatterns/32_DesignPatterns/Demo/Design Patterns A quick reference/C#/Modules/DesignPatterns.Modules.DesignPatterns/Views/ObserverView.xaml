@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.ObserverView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem Header="Observer Pattern" IsSelected="True" Style="{StaticResource TabItemStyle}" Background="Transparent" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="0" Text="Manager Record :" HorizontalAlignment="Right" />
+                    <TextBlock Foreground="White" Grid.Row="1" Grid.Column="0" Text="Admin Record :" HorizontalAlignment="Right" />
+
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="1" Text="{Binding TxtManager}" Width="Auto" Margin="10,0,0,0" HorizontalAlignment="Left" />
+                    <TextBlock Foreground="White" Grid.Row="1" Grid.Column="1" Text="{Binding TxtAdmin}" Width="Auto" Margin="10,0,0,0" HorizontalAlignment="Left" />
+                    
+                </Grid>
+            </TabItem>
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource ObserverStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Define a one-to-many dependency between objects so that when one object changes state, all its dependents are
+                                        notified and updated automatically.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Also Known As  Dependents, Publish-Subscribe.   
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Motivation :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        A common side-effect of partitioning a system into a collection of cooperating classes is the need to maintain
+                                        consistency between related objects. You don't want to achieve consistency by making the classes tightly coupled,
+                                        because that reduces their reusability.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        For example, many graphical user interface toolkits separate the presentational aspects of the user interface from the
+                                        underlying application data  Classes defining application data and presentations
+                                        can be reused independently. They can work together, too. Both a spreadsheet object and bar chart object can depict
+                                        information in the same application data object using different presentations. The spreadsheet and the bar chart don't
+                                        know about each other, thereby letting you reuse only the one you need. But they behave as though they do. When
+                                        the user changes the information in the spreadsheet, the bar chart reflects the changes immediately, and vice versa.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        This behavior implies that the spreadsheet and bar chart are dependent on the data object and therefore should be
+                                        notified of any change in its state. And there's no reason to limit the number of dependent objects to two; there may
+                                        be any number of different user interfaces to the same data.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Observer pattern describes how to establish these relationships. The key objects in this pattern are subject and
+                                        observer. A subject may have any number of dependent observers. All observers are notified whenever the subject
+                                        undergoes a change in state. In response, each observer will query the subject to synchronize its state with the
+                                        subject's state.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Applicability :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When an abstraction has two aspects, one dependent on the other. Encapsulating these aspects in separate
+                                        objects lets you vary and reuse them independently.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When a change to one object requires changing others, and you don't know how many objects need to be
+                                        changed.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When an object should be able to notify other objects without making assumptions about who these objects
+                                        are. In other words, you don't want these objects tightly coupled.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="Participants"  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Subject :</Paragraph>
+                            <List Margin="0" Padding="0" >
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Knows its observers. Any number of Observer objects may observe a subject.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Provides an interface for attaching and detaching Observer objects.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Observer :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Defines an updating interface for objects that should be notified of changes in a subject.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ConcreteSubject :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Stores state of interest to ConcreteObserver objects.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        sends a notification to its observers when its state changes.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ConcreteObserver :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Maintains a reference to a ConcreteSubject object.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Stores state that should stay consistent with the subject's.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Implements the Observer updating interface to keep its state consistent with the subject's.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

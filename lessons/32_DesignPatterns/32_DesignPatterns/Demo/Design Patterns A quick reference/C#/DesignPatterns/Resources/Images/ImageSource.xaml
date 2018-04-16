@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageBrush x:Key="HomeButtonBackgroundImage" ImageSource="Home.png"></ImageBrush>
+    <ImageBrush x:Key="AboutButtonBackgroundImage" ImageSource="about.png">
+        </ImageBrush>
+    <BitmapImage x:Key="IconImage" UriSource="Dp.png"></BitmapImage>
+    <BitmapImage  x:Key="AdapterStructureImage" UriSource="AdapteImg.png"/>
+    <BitmapImage x:Key="BackgroundImage" UriSource="backgroundimage.png"/>
+    <BitmapImage x:Key="AdapterCollabarationImage" UriSource="AdapterCollabarationImg.png"/>
+    <BitmapImage x:Key="DecoratorStructureImage" UriSource="DecoratorStructureImg.png"/>
+    <BitmapImage x:Key="ProxyStructureImage" UriSource="ProxyStructureImg.png"/>
+    <BitmapImage x:Key="BridgeStructureImage" UriSource="BridgeStructureImg.png"/>
+    <BitmapImage x:Key="CompositeStructureImage" UriSource="CompositeStructureImg.png"/>
+    <BitmapImage x:Key="FacadeStructureImage" UriSource="FacadeStructureImg.png" />
+    <BitmapImage x:Key="PrototypeStructureImage" UriSource="PrototypeStructureImg.png"/>
+    <BitmapImage x:Key="FactoryStructureImage" UriSource="FactoryMethodStructureImg.png"/>
+    <BitmapImage x:Key="ChainStructureImage" UriSource="ChainStructureImg.png"/>
+    <BitmapImage x:Key="CommandStructureImage" UriSource="CommandStructureImg.png"/>
+    <BitmapImage x:Key="IteratorStructureImage" UriSource="IteratorStructureImg.png"/>
+    <BitmapImage x:Key="VisitorStructureImage" UriSource="VisitorStructureImg.png"/>
+    <BitmapImage x:Key="ObserverStructureImage" UriSource="ObserverStructureImg.png"/>
+    <BitmapImage x:Key="ServiceStructureImage" UriSource="ServiceLocatorImg.png"/>
+    <BitmapImage x:Key="SingletonStructureImage" UriSource="SingletonStructureImg.png"/>
+    <BitmapImage x:Key="MVPStructureImage" UriSource="MVPStructureImg.png"/>
+    <BitmapImage x:Key="MVCStructureImage" UriSource="MVCStructureImg.png"/>
+    <BitmapImage x:Key="AboutImage" UriSource="AboutMe.jpg"/>
+</ResourceDictionary>

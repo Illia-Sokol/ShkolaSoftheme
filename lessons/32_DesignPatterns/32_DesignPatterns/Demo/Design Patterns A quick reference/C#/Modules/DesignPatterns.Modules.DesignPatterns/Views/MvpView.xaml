@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.MvpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource MVPStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Provide clear separation between the following concerns.
+                                    </Paragraph>
+                                </ListItem>
+                               
+                                        <ListItem Margin="40,0,0,0">
+                                            <Paragraph  FontWeight="Bold">
+                                                The data to show
+                                            </Paragraph>
+                                        </ListItem>
+                                        <ListItem Margin="40,0,0,0">
+                                            <Paragraph  FontWeight="Bold">
+                                                The business logic of the Application
+                                            </Paragraph>
+                                        </ListItem>
+                                        <ListItem Margin="40,0,0,0">
+                                            <Paragraph  FontWeight="Bold">
+                                                Display of data
+                                            </Paragraph>
+                                        </ListItem>
+                                    </List>
+                                </ListItem>
+                         
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Motivation :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Ensure each collaborator in the pattern has a single responsibility
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Model
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        View
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                       Presenter
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="Participants"  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Model :</Paragraph>
+                            <List Margin="0" Padding="0" >
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Model is the same as in MVC. It represents any business entity with associated data
+                                        and business logic.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                View:
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The View is the graphical interface in charge of rendering the data. It directly references
+                                        the Presenter so that it can delegate to it the interpretation of all user interactions.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Presenter:
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Presenter drives the UI logic; it knows both the View (through an interface) and the
+                                        Model. It updates the View based on change notifications from the Model and updates
+                                        the Model based on change notifications from the View. This is the object that encapsulates
+                                        the presentation logic, and it usually sets property values and calls methods on the
+                                        View rather than using a binding engine.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

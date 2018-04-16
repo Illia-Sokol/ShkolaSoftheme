@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.VisitorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem Header="Visitor Pattern" IsSelected="True" Style="{StaticResource TabItemStyle}" Background="Transparent" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="0" Text="Total Saving Of this Month :" HorizontalAlignment="Right" />
+                  
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="1" Text="{Binding Savings}" Width="Auto" Margin="10,0,0,0" HorizontalAlignment="Left" />
+                    
+                </Grid>
+            </TabItem>
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource VisitorStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new
+                                        operation without changing the classes of the elements on which it operates.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Motivation :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Consider a compiler that represents programs as abstract syntax trees. It will need to perform operations on
+                                        abstract syntax trees for "static semantic" analyses like checking that all variables are defined. It will also need to
+                                        generate code. So it might define operations for type-checking, code optimization, flow analysis, checking for
+                                        variables being assigned values before they're used, and so on. Moreover, we could use the abstract syntax trees
+                                        for pretty-printing, program restructuring, code instrumentation, and computing various metrics of a program.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Most of these operations will need to treat nodes that represent assignment statements differently from nodes
+                                        that represent variables or arithmetic expressions. Hence there will be one class for assignment statements,
+                                        another for variable accesses, another for arithmetic expressions, and so on. The set of node classes depends on
+                                        the language being compiled, of course, but it doesn't change much for a given language.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Applicability :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        An object structure contains many classes of objects with differing interfaces, and you want to perform
+                                        operations on these objects that depend on their concrete classes.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Many distinct and unrelated operations need to be performed on objects in an object structure, and you
+                                        want to avoid "polluting" their classes with these operations. Visitor lets you keep related operations
+                                        together by defining them in one class. When the object structure is shared by many applications, use
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The classes defining the object structure rarely change, but you often want to define new operations over
+                                        the structure. Changing the object structure classes requires redefining the interface to all visitors, which
+                                        is potentially costly. If the object structure classes change often, then it's probably better to define the
+                                        operations in those classes.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="Participants"  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Visitor :</Paragraph>
+                            <List Margin="0" Padding="0" >
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Declares a Visit operation for each class of ConcreteElement in the object structure. The
+                                        operation's name and signature identifies the class that sends the Visit request to the visitor. That
+                                        lets the visitor determine the concrete class of the element being visited. Then the visitor can
+                                        access the element directly through its particular interface.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ConcreteVisitor :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Implements each operation declared by Visitor. Each operation implements a fragment of the
+                                        algorithm defined for the corresponding class of object in the structure. ConcreteVisitor provides
+                                        the context for the algorithm and stores its local state. This state often accumulates results during
+                                        the traversal of the structure.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Element :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                       Defines an Accept operation that takes a visitor as an argument.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ConcreteElement :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Implements an Accept operation that takes a visitor as an argument.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ObjectStructure :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Can enumerate its elements.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        May provide a high-level interface to allow the visitor to visit its elements.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.AboutMeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="768" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image Source="{StaticResource AboutImage}" Width="900" Height="300"  VerticalAlignment="Top"/>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" >
+            <TextBlock Foreground="White" FontSize="20"  Text="I am software engineer  experience in designing and developing the"></TextBlock>
+            <TextBlock Foreground="White" FontSize="20"  Text="Architecture and Softwares using"/>
+            <TextBlock  Foreground="White" FontSize="20"  Text="Rich Client Applications:    WPF, MVVM, Prism, MEF and IOC."/>
+            <TextBlock  Foreground="White" FontSize="20"  Text="Rich Internet Applications: Silverlight, Mvvm, prism, WCF, MEF and IOC."/>
+            <TextBlock Foreground="White" FontSize="20"  Text="Web Application:  MVC 3, Asp.net, c#, HTML 5, J Query, xml."/>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

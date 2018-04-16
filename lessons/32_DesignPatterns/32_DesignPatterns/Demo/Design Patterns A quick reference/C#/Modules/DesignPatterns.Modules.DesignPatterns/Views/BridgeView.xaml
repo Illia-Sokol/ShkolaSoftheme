@@ -1,0 +1,167 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.BridgeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem Header="Bridge Pattern" IsSelected="True" Style="{StaticResource TabItemStyle}" Background="Transparent" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="0" Text="Formatted Text :" HorizontalAlignment="Right" />
+
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="1" Text="{Binding TxtFormat}" Width="Auto" Margin="10,0,0,0" HorizontalAlignment="Left" />
+                   
+                </Grid>
+            </TabItem>
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource BridgeStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Decouple an abstraction from its implementation so that the two can vary independently.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Also :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Bridge also known as Handle/Body.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Motivation :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Putting the abstraction and its implementation in seperate class hierarchies.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Applicability :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Need to avoid a permanent binding between an abstraction and implementation.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When abstractions and implementations should be extensible through subclassing.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When implementation changes should not impact clients.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When the implementation should be completely hidden from the client.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When you have a proliferation of classes.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        When, unknown to the client, implementations are shared among objects
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="Participants"  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Abstraction :</Paragraph>
+                            <List Margin="0" Padding="0" >
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Defines the abstraction's interface.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Maintains a reference to an object of type Implementor.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                RefinedAbstraction :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Extends the interface defined by Abstraction.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                Implementor :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Defines the interface for implementation classes. This interface doesn't have to correspond exactly to
+                                        Abstraction's interface; in fact the two interfaces can be quite different. Typically the Implementor
+                                        interface provides only primitive operations, and Abstraction defines higher-level operations based
+                                        on these primitives.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">
+                                ConcreteImplementor :
+                            </Paragraph>
+                            <List  Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Implements the Implementor interface and defines its concrete implementation.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

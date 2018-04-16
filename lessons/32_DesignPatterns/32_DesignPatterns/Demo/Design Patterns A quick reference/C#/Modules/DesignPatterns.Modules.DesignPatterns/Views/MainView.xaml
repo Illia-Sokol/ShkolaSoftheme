@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+            Width="900">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding AdapterCommand}" >
+                    <TextBlock>Adapter <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding DecoratorCommand}">
+                    <TextBlock>Decorator <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding ProxyCommand}">
+                    <TextBlock>Proxy <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding BridgeCommand}">
+                    <TextBlock>Bridge <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding ServiceLocatorCommand}">
+                    <TextBlock>Service<LineBreak/>Locator<LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+           
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" >
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding FacadeCommand}">
+                    <TextBlock>Facade <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding PrototypeCommand}">
+                    <TextBlock>Prototype <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding FactoryMethodCommand}">
+                    <TextBlock>Factory <LineBreak/> Method <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding SingletonCommand}">
+                    <TextBlock>Singleton <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding MvcCommand}">
+                    <TextBlock>MVC <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" >
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding MVPCommand}">
+                    <TextBlock>MVP <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding CommandPatternCommand}">
+                    <TextBlock>Command <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding IteratorCommand}">
+                    <TextBlock>Iterator <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding ObserverCommand}" >
+                    <TextBlock>Observer <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+            <Border Style="{StaticResource BorderStyle}">
+                <Button Style="{StaticResource DpButtonStyle}" Command="{Binding VisitorCommand}">
+                    <TextBlock>Visitor <LineBreak/> Pattern</TextBlock>
+                </Button>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

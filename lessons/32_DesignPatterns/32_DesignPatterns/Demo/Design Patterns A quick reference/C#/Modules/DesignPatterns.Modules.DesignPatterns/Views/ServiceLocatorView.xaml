@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="DesignPatterns.Modules.Views.ServiceLocatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              Height="768" Width="900">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Stretch">
+            <TabItem Header="Service Locator Pattern" IsSelected="True" Style="{StaticResource TabItemStyle}" Background="Transparent" >
+                   
+                    <TextBlock Foreground="White" FontSize="20" Text="You can find code in MainViewModel class:" 
+                               VerticalAlignment="Top" HorizontalAlignment="Center"/>
+      
+            </TabItem>
+            <TabItem  Header="Structure Diagram"  Style="{StaticResource TabItemStyle}">
+                <Image Source="{StaticResource ServiceStructureImage}" VerticalAlignment="Top"/>
+            </TabItem>
+            <TabItem  Header="Definitions &amp; Motivation" Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                        <ListItem>
+                            <Paragraph>Intent :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Abstract the application from the service its uses.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                        Change the service without re-compilation
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph  FontWeight="Bold">
+                                       Identify service through configuration
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Motivation :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        Get instance of the current view
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+
+                        <ListItem>
+                            <Paragraph FontWeight="Bold">Applicability :</Paragraph>
+                            <List Margin="0" Padding="0">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        You want to decouple your classes from their dependencies 
+                                        so that these dependencies can be replaced or updated with little or no change to the classes.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        You want to write logic that depends on classes whose concrete implementation is not known at compile time.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        You want to be able to test your classes in isolation, without the dependencies.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        You do not want the logic that locates and manages the dependencies to be in your classes.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        You want to divide your application into loosely coupled modules that can be independently developed, tested, versioned, and deployed.
+                                    </Paragraph>
+                                </ListItem>
+                            </List>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+            <TabItem Header="More..."  Style="{StaticResource TabItemStyle}">
+                <FlowDocument Background="Transparent" ColumnWidth="500">
+                    <List MarkerOffset="25" MarkerStyle="Disc">
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        The Service Locator pattern does not describe how to instantiate the services. It describes a way to register services and locate them. Typically, the Service Locator pattern is combined with the Factory pattern and/or 
+                                        the Dependency Injection pattern. This combination allows a service locator to create instances of services.
+                                    </Paragraph>
+                                </ListItem>
+                                <ListItem Margin="40,0,0,0">
+                                    <Paragraph>
+                                        A service locator should be able to locate a service without knowing its concrete type. For example, it might use a string key or a service interface type.
+                                        This allows you to replace the concrete implementation of the dependency without modifying the classes.
+                                    </Paragraph>
+                                </ListItem>
+                    </List>
+                </FlowDocument>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

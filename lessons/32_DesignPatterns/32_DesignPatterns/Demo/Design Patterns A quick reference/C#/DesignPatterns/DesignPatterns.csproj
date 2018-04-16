@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57570897-1C12-4A0C-B2C9-3A2AC68CF060}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesignPatterns</RootNamespace>
+    <AssemblyName>DesignPatterns</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\References\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions">
+      <HintPath>..\References\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\References\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DesignPatternBootStrapper.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Images\ImageSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\DesignPatterns.Common\DesignPatterns.Common.csproj">
+      <Project>{5E5EAE97-9255-4704-9764-08E20BD5C06C}</Project>
+      <Name>DesignPatterns.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\DesignPatterns.Modules.DesignPatterns\DesignPatterns.Modules.csproj">
+      <Project>{DC8826EA-DD48-42D3-9D9A-AECA5B756DB5}</Project>
+      <Name>DesignPatterns.Modules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AdapteImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\backgroundimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AdapterCollabarationImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\DecoratorStructureImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BridgeStructureImg.png" />
+    <Resource Include="Resources\Images\ChainStructureImg.png" />
+    <Resource Include="Resources\Images\CommandStructureImg.png" />
+    <Resource Include="Resources\Images\CompositeStructureImg.png" />
+    <Resource Include="Resources\Images\EventAggregatorImg.png" />
+    <Resource Include="Resources\Images\FacadeStructureImg.png" />
+    <Resource Include="Resources\Images\FactoryMethodStructureImg.png" />
+    <Resource Include="Resources\Images\FlyweightStructureImg.png" />
+    <Resource Include="Resources\Images\IteratorStructureImg.png" />
+    <Resource Include="Resources\Images\MediatorStructureImg.png" />
+    <Resource Include="Resources\Images\MVCStructureImg.png" />
+    <Resource Include="Resources\Images\MVPStructureImg.png" />
+    <Resource Include="Resources\Images\ObserverStructureImg.png" />
+    <Resource Include="Resources\Images\PrototypeStructureImg.png" />
+    <Resource Include="Resources\Images\ProxyStructureImg.png" />
+    <Resource Include="Resources\Images\RepositoryStructureImg.png" />
+    <Resource Include="Resources\Images\ServiceLocatorImg.png" />
+    <Resource Include="Resources\Images\SingletonStructureImg.png" />
+    <Resource Include="Resources\Images\StateStructureImg.png" />
+    <Resource Include="Resources\Images\StrategyStructureImg.png" />
+    <Resource Include="Resources\Images\TemplateStructureImg.png" />
+    <Resource Include="Resources\Images\UnityOfWorkStructureImg.png" />
+    <Resource Include="Resources\Images\VisitorStructureImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AboutMe.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
