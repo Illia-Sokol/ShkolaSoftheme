@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _03_Delegates
 {
@@ -8,7 +9,8 @@ namespace _03_Delegates
         public static void Sort<T>(IList<T> sortArray, Func<T, T, bool> comparisonFunc)
         {
             bool sorting;
-
+            var list = new List<int> { 1, 2, 3 };
+            var list2 = list.ToList();
             do
             {
                 sorting = false;
