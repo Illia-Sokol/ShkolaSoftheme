@@ -4,31 +4,57 @@ using System.Text;
 
 namespace Mobile
 {
-    class CallInfo
+    class CallInfoEventArgs : EventArgs
     {
         public int Sender { get; set; }
         public int Receiver { get; set; }
     }
+
+    class SmsInfoEventArgs : EventArgs
+    {
+        public int Sender { get; set; }
+        public int Receiver { get; set; }
+        public string Message { get; set; }
+    }
+
     class MobileAccount
     {
-        private readonly int _number;
+        public int Number { get; }
 
-        public delegate void CallHandler(object sender, EventHandler e);
-        public event EventHandler<CallInfo> SendCall;
+        public event EventHandler<CallInfoEventArgs> CallIssued;
+        public event EventHandler<SmsInfoEventArgs> SmsSent;
 
         public MobileAccount(int number)
         {
-            _number = number;
+            Number = number;
         }
 
-        public void Call(int sum)
+        public void Call(int number)
         {
-            Console.WriteLine("call");
+            var callIssued = CallIssued;
+            if (callIssued != null)
+            {
+                callIssued(this, new CallInfoEventArgs { Sender = Number, Receiver = number });
+            }
         }
 
-        public void SendSms()
+        public void SendSms(int number, string message)
         {
-            Console.WriteLine("sendSmS");
+            var smsSent = SmsSent;
+            if (smsSent != null)
+            {
+                smsSent(this, new SmsInfoEventArgs { Sender = Number, Receiver = number, Message = message });
+            }
+        }
+
+        public void ReceiveCall(int number)
+        {
+            Console.WriteLine($"{Number}: Call from account {number}");
+        }
+
+        public void ReceiveSms(int number, string message)
+        {
+            Console.WriteLine($@"{Number}: Received message ""{message}"" from {number}");
         }
     }
 }

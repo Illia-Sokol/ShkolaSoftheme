@@ -8,12 +8,16 @@ namespace Mobile
         {
             Console.WriteLine("Hello World!");
 
-            var account = new MobileAccount(12345);
-        }
+            var account1 = new MobileAccount(12345);
+            var account2 = new MobileAccount(23456);
+            using (var @operator = new MobileOperator())
+            {
+                @operator.AddAccount(account1);
+                @operator.AddAccount(account2);
 
-        private static void ShowMessage(object sender, CallInfo e)
-        {
-            Console.WriteLine("Sum of the transaction: {0}", e.Sender);
+                account1.Call(23456);
+                account1.SendSms(23456, "Test message");
+            }
         }
     }
 }
