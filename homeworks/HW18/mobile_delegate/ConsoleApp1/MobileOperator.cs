@@ -8,9 +8,6 @@ namespace Mobile
     class MobileOperator : IDisposable
     {
         private readonly List<MobileAccount> accounts = new List<MobileAccount>();
-        public MobileOperator()
-        {   
-        }
 
         public void AddAccount(MobileAccount account)
         {
